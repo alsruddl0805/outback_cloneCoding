@@ -1,6 +1,3 @@
-// bbs 보완
-// 공지사항 번호 js로 구현하기
-
 // mainBar
 
 $("#mainBar>li:nth-child(2),#mainBar>li:nth-child(3)").click(function(){
@@ -26,16 +23,6 @@ for (let i=0; i<pageBtn.length; i++) {
 }
 
 // 공지사항 리스트 번호 자동출력
-
-// let listNum = document.querySelectorAll(".listNum");
-// let max = 44;
-// let min = 35;
-
-// for (let i=0; i<listNum.length; i++) {
-//   for (let j=max; j>=min; j--) {
-//     listNum[i].innerText = j;
-//   }
-// }
 
 let listNum = document.querySelectorAll(".listNum");
 let start = 44;

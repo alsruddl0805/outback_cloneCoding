@@ -131,7 +131,7 @@
                 <p>약관 동의</p>
                 <p>이용약관과 개인정보처리방침에 대한 안내를 읽고 동의해주세요.</p>
                 <p>
-                    <label class="chkboxContainer" checked= "checked">
+                    <label class="chkboxContainer">
                         <input type="checkbox" id="allCheck" class="selectAllMembers">
                         <span id="ID_cookie">모든 약관을 확인하고 전체 동의함</span>
                         <span class="chkboxCheckmark"></span>
@@ -145,11 +145,11 @@
                         <iframe src="agreeContent.html"></iframe>
                         <fieldset>
                             <label class= "radioContainer">
-                                <input type="checkbox" value= "1" class="partner_agree" id= "1" checked> 동의하지 않음
+                                <input type="radio" name = "partner" class="disagree" id="partnerDisagree" checked> 동의하지 않음
                                 <span class="radioboxCheckmark"></span>
                             </label>
                             <label class= "radioContainer">
-                                <input type="checkbox" value= "2" class="agreement partner_agree" id="partnerAgree"> 동의함
+                                <input type="radio" name = "partner" class="agree" id="partnerAgree"> 동의함
                                 <span class="radioboxCheckmark"></span>
                             </label>
                         </fieldset>
@@ -183,11 +183,11 @@
                         </table>
                         <fieldset>
                             <label class= "radioContainer">
-                                <input type="checkbox" value= "1" class="use_agree" id="2" checked> 동의하지 않음
+                                <input type="radio" name = "use" class="disagree" id="useDisagree" checked> 동의하지 않음
                                 <span class="radioboxCheckmark"></span>
                             </label>
                             <label class= "radioContainer">
-                                <input type="checkbox" value= "2" class="agreement use_agree" id="useAgree"> 동의함
+                                <input type="radio" name = "use" class="agree" id="useAgree"> 동의함
                                 <span class="radioboxCheckmark"></span>
                             </label>
                         </fieldset>
@@ -215,11 +215,11 @@
                         </table>
                         <fieldset>
                             <label class= "radioContainer">
-                                <input type="checkbox" value= "1" class="consignment_agree" id="3" checked> 동의하지 않음
+                                <input type="radio" name = "consignment" class="disagree" id="consignmentDisagree" checked> 동의하지 않음
                                 <span class="radioboxCheckmark"></span>
                             </label>
                             <label class= "radioContainer">
-                                <input type="checkbox" value= "2" class="agreement consignment_agree" id="consignmentAgree"> 동의함
+                                <input type="radio" name = "consignment" class="agree" id="consignmentAgree"> 동의함
                                 <span class="radioboxCheckmark"></span>
                             </label>
                         </fieldset>
