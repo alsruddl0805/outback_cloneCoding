@@ -125,8 +125,8 @@
 
 #tomato2 {
     position: absolute;
-    left: 400px;
-    top: 2020px;
+    left: 0;
+    top: -340px;
 }
 
 main>p {
@@ -140,6 +140,7 @@ main>p {
     margin-top: 300px;
     margin-bottom: 100px;
     background-image: url(../images/benefit.png);
+    position: relative;
 }
 
 #benefit p:nth-child(2), #benefit table tr:nth-child(2) td a {
