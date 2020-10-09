@@ -28,6 +28,6 @@ let listNum = document.querySelectorAll(".listNum");
 let start = 44;
 
 for (let i = 0; i<listNum.length; i++) {
-  let numTxt = start - i;
-  listNum[i].innerText = numTxt;
+  let number = start - i;
+  listNum[i].innerText = number;
 }
