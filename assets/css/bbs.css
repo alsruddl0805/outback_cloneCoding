@@ -211,7 +211,7 @@ table tr td .bbsInfo {
     display: inline-block;
 }
 
-#buttonArea ul:nth-child(2) {
+#buttonArea #pageBtn {
     margin: 0 20px;
 }
 
@@ -234,17 +234,17 @@ table tr td .bbsInfo {
     border-right: none;
 }
 
-#buttonArea ul:nth-child(2) li {
+#buttonArea #pageBtn li {
     border: 1px solid #aaa;
     border-right: none;
     color: #666;
 }
 
-#buttonArea ul:nth-child(2) li:hover {
+#buttonArea #pageBtn li:hover {
     background-color: #eee;
 }
 
-#buttonArea ul:nth-child(2) li:last-child {
+#buttonArea #pageBtn li:last-child {
     border: 1px solid #aaa;
 }
 
