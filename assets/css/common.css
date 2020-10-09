@@ -1,0 +1,290 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+header,footer {
+    font-family: 'Noto Sans','Noto Sans KR', verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+* {
+    margin: 0 auto;
+}
+
+/*header*/
+
+header {
+    width: 100%;
+    background-color:#343436;
+    position: fixed;
+    z-index: 999;
+}
+
+#header {
+    width: 1180px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+#header a {
+    color: #fff;
+}
+
+#header>a {
+    flex: 1;
+    margin-top: 25px;
+}
+
+#GNB {
+    flex: 3;
+    text-align: center;
+}
+
+#GNB ul#mainMenu {
+    height: 100px;
+    padding-left: 50px;
+    position: relative;
+}
+
+#GNB ul#mainMenu>li {
+    height: 30px;
+    margin: 35px 20px 0;
+    float: left;
+    font-size: 17px;
+}
+
+#GNB ul#mainMenu>li.active {
+    border-bottom: 3px solid #cb0000;
+    transition: 0.3s;
+}
+
+#GNB ul.subMenu {
+    width: 130px;
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 100px;
+    z-index: 999;
+    display: none;
+}
+
+#GNB ul.subMenu>li {
+    font-size: 15px;
+    line-height: 40px;
+    text-align: left;
+}
+
+#LNB {
+    flex: 1;
+}
+
+#LNB>ul{
+    height: 100px;
+}
+
+#LNB>ul>li {
+    width: 70px;
+    text-align: center;
+    display: inline-block;
+    line-height: 100px;
+    font-size: 12px;
+}
+
+#LNB>ul>li:first-child a,#LNB>ul>li:nth-child(2) a{
+    color: #aaa;
+}
+
+#LNB>ul>li:last-child {
+    height: 70px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #555;
+}
+
+/*footer*/
+
+#addMenu {
+    width: 1180px;
+    height: 160px;
+    margin-top: 180px;
+    position: relative;
+    top: -80px;
+}
+
+#addMenu ul {
+    display: flex;
+}
+
+#addMenu ul li {
+    width: 394px;
+    height: 160px;
+}
+
+#addMenu ul li a {
+    color: #fff;
+}
+
+#addMenu ul li:first-child {
+    background-color: #907354;
+}
+
+#addMenu ul li:nth-child(2) {
+    background-color: #434343;
+}
+
+#addMenu ul li:nth-child(3) {
+    background-color: #c30606;
+}
+
+#addMenu ul li p {
+    padding: 20px 0 0 20px;
+}
+
+#addMenu ul li p:first-child {
+    font-size: 25px;
+}
+
+#addMenu ul li p:nth-child(2) {
+    font-size: 14px;
+    padding-top: 0;
+}
+
+#addMenu ul li img.icon {
+    position: relative;
+    left: 250px;
+    top: -60px;
+    transition: 0.3s;
+}
+
+#addMenu ul li:hover img.icon {
+    top: -70px;
+    transition: 0.3s;
+}
+
+#addMenu ul li:nth-child(3) img.icon {
+    top: -90px;
+    transition: 0.3s;
+}
+
+#addMenu ul li:nth-child(3):hover img.icon {
+    top: -100px;
+    transition: 0.3s;
+}
+
+#addMenu ul li img.arrow {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -80px;
+    top: -20px;
+    transition: 0.3s;
+}
+
+#addMenu ul li:hover img.arrow {
+    left: -50px;
+    transition: 0.3s;
+}
+
+#addMenu ul li:nth-child(3) img.arrow {
+    left: -110px;
+    top: -30px;
+    transition: 0.3s;
+}
+
+#addMenu ul li:nth-child(3):hover img.arrow {
+    left: -80px;
+    transition: 0.3s;
+}
+
+#addMenu>img {
+    position: absolute;
+    right: -110px;
+    top: 40px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #232323;
+    padding-bottom: 50px;
+}
+
+#footer {
+    width: 1180px;
+    height: 171px;
+    display: flex;
+}
+
+#footer>a {
+    flex: 1;
+}
+
+#footer ul {
+    width: 1010px;
+    flex: 4;
+}
+
+#footer ul li, #footer ul li a, #footer li nav ul li{
+    color: #919191;
+    font-size: 13px;
+}
+
+#footer ul li:first-child nav p {
+    width: 360px;
+}
+
+#footer ul li:first-child nav {
+    display: flex;
+}
+
+#footer ul li:first-child nav ul li {
+    float: left;
+    padding-left: 3px;
+}
+
+#footer ul li:nth-child(3) {
+    display: flex;
+}
+
+#footer ul li:nth-child(3) #btnArea {
+    margin: 15px 0;
+}
+
+#footer ul#btnArea li {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 8px;
+    font-size: 12px;
+    float: left;
+    border: 1px solid #929292;
+    cursor: pointer;
+}
+
+#footer #btnArea li:last-child {
+    padding-left: 10px;
+}
+
+#snsIcon a img{
+    margin: 0 3px;
+}
+
+#footer ul li span.telNum {
+    font-size: 18px;
+}

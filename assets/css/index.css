@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+/*main*/
+
+#slide {
+    width: 1920px;
+    height: 900px;
+    overflow: hidden;
+    position: relative;
+    top: 100px;
+}
+
+#slideFrame {
+    width: 7680px;
+}
+
+#slideFrame img {
+    max-width: none;
+    float: left;
+}
+
+#arrowArea {
+    width: 1180px;
+    height: 900px;
+    position: absolute;
+    top: 0px;
+}
+
+#arrowArea img {
+    position: absolute;
+    top: 350px;
+    cursor: pointer;
+}
+
+#arrowArea img:first-child {
+    left: 200px;
+}
+
+#arrowArea img:nth-child(2) {
+    left: 230px;
+    display: none;
+}
+
+#arrowArea img:nth-child(3) {
+    right: -520px;
+}
+
+#arrowArea img:nth-child(4) {
+    right: -520px;
+    display: none;
+}
+
+#slideControl {
+    width: 100%;
+    position: relative;
+    top: -30px;
+}
+
+#slideControl ul {
+    width: 1180px;
+    height: 35px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    z-index: 999;
+}
+
+#slideControl li {
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#slideControl  li.pager {
+    border-radius: 50px;
+    border: 1px solid #fff;
+}
+
+#slideControl li p {
+    width: 15px;
+    height: 15px;
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #fff;
+}
+
+#videoArea {
+    width: 1180px;
+    padding: 180px 0 150px 0;
+    display: flex;
+    position: relative;
+}
+
+#videoArea ul {
+    width: 504px;
+}
+
+#videoArea ul li {
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+#videoArea ul li:first-child {
+    font-size: 42px;
+    margin-top: 45px;
+}
+
+#videoArea ul li:nth-child(2) {
+    font-size: 20px;
+}
+
+#videoArea ul li:last-child {
+    font-size: 14px;
+    color: #555;
+    line-height: 25px;
+}
+
+#tomato1 {
+    position: absolute;
+    right: -250px;
+}
+
+#tomato2 {
+    position: absolute;
+    left: 400px;
+    top: 2020px;
+}
+
+main>p {
+    text-align: center;
+}
+
+#benefit {
+    width: 1180px;
+    height: 520px;
+    text-align: center;
+    margin-top: 300px;
+    margin-bottom: 100px;
+    background-image: url(../images/benefit.png);
+}
+
+#benefit p:nth-child(2), #benefit table tr:nth-child(2) td a {
+    color: #fff;
+}
+
+#benefit p:nth-child(3), #benefit table tr:nth-child(3) td a {
+    color: #ccc;
+}
+
+#benefit p:nth-child(2) {
+    font-size: 45px;
+    padding: 80px 0 10px 0;
+}
+
+#benefit p:nth-child(3) {
+    font-size: 16px;
+}
+
+#benefit table {
+    margin-top: 60px;
+}
+
+#benefit table tr td {
+    width: 350px;
+    height: 40px;
+}
+
+#benefit table tr:nth-child(2) td {
+    font-size: 22px;
+}
+
+#benefit table tr:last-child td {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+#reward {
+    width: 1180px;
+    height: 304px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#left {
+    flex: 1;
+    border: 5px solid #000;
+    margin: 20px;
+}
+
+#left ul {
+    width: 220px;
+    height: 230px;
+    padding: 15px;
+    background-color: #fff;
+    position: relative;
+    left: -20px;
+    top: -20px;
+}
+
+#left ul li:first-child {
+    font-size: 22px;
+}
+
+#left ul li:nth-child(2) {
+    font-size: 40px;
+}
+
+#left ul li:nth-child(3) {
+    font-size: 15px;
+    color: #555;
+    line-height: 25px;
+    margin: 20px 0;
+}
+
+#left ul li button {
+    width: 100px;
+    height: 32px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    outline: none;
+}
+
+#right {
+    flex: 3;
+}
+
+#right table {
+    width: 820px;
+}
+
+#right table tr td {
+    width: 270px;
+    height: 130px;
+}
+
+#right table tr td p {
+    line-height: 35px;
+}
+
+#right table tr td p:first-child {
+    font-size: 17px;
+    color: rgb(209, 178, 178);
+}
+
+#right table tr td p:nth-child(2) {
+    font-size: 18px;
+}
+
+#right table tr td p:nth-child(3) {
+    font-size: 14px;
+    color:#555;
+    line-height: 20px;
+}
