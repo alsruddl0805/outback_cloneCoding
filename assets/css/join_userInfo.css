@@ -1,0 +1,113 @@
+main {
+    position: relative;
+    top:100px;
+}
+
+/*menuList 시작*/
+
+#menuList {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #dedede;
+}
+
+#menuList #mainBar {
+    width: 1180px;
+    height: 50px;
+    margin: 0 auto;
+    border-left: 1px solid #dedede;
+}
+
+#menuList #mainBar>li {
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    position: relative;
+    color: #bbb;
+}
+
+#menuList #mainBar li a:not(.active) {
+    color: #bbb;
+    transition: 0.3s;
+}
+
+#menuList #mainBar li a:hover {
+    color: #000;
+}
+
+#menuList #mainBar .subBar li a:hover {
+    text-decoration: underline;
+}
+
+#menuList #mainBar>li:first-child {
+    width: 61px;
+    border-right: 1px solid #dedede;
+}
+
+#menuList #mainBar>li:nth-child(2) {
+    width: 243px;
+    border-right: 1px solid #dedede;
+}
+
+#menuList #mainBar>li:nth-child(2) i {
+    padding-left: 170px;
+}
+
+#menuList #mainBar>li:nth-child(3) {
+    width: 278px;
+    border-right: 1px solid #dedede;
+}
+
+#menuList #mainBar>li:nth-child(3) i {
+    padding-left: 180px;
+}
+
+#menuList #mainBar>li:last-child {
+    width: 555px;
+    text-align: right;
+    font-size: 14px;
+    word-spacing: 5px;
+}
+
+#menuList #mainBar>li:last-child span {
+    color: #000;
+}
+
+#menuList .subBar {
+    width: 243px;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    position: absolute;
+    left: -1px;
+}
+
+#menuList li:nth-child(3) .subBar {
+    width: 278px;
+    left: -1px;
+}
+
+#menuList .subBar li {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.mainBarStyle {
+    border: 1px solid #000 !important;
+    border-bottom: none;
+    box-shadow: 1px 7px 10px #aaa;
+    left: -1px;
+    top: -1px;
+}
+
+.subBarStyle {
+    border: 1px solid #000 !important;
+    box-shadow: 1px 7px 10px #aaa;
+}
+
+.subBar li a.active {
+    text-decoration: underline;
+}
+
+/*menuList 종료*/
