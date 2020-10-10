@@ -108,7 +108,7 @@
                     </li>
                     <li>
                         <a href="#">
-                        로그인<i class="fas fa-caret-down"></i>
+                        회원가입 <i class="fas fa-caret-down"></i>
                         </a>
                         <ul class="subBar">
                             <li><a href="login.html">로그인</a></li>
@@ -128,67 +128,141 @@
 
             <div id="userInfoArea">
 
-                <p>회원정보입력</p>
+                <p>회원정보 입력</p>
                 <p>이용약관과 개인정보처리방침에 대한 안내를 읽고 동의해주세요.</p>
-                <p>＊필수 입력 항목입니다.</p>
+                <p><span class="starSign">＊</span>표기된 항목은 필수입력 항목입니다.</p>
 
                 <table>
                     <tr>
-                        <td>이름</td>
+                        <td>이름<span class="starSign">＊</span></td>
                         <td>권민경</td>
                     </tr>
                     <tr>
-                        <td>생년월일</td>
+                        <td>생년월일<span class="starSign">＊</span></td>
                         <td>1111.11.11</td>
                     </tr>
                     <tr>
-                        <td>아이디</td>
+                        <td>아이디<span class="starSign">＊</span></td>
                         <td>
-                            <input type="text" id="uID">
+                            <input type="text" id="uID" placeholder="아이디를 입력하세요">
                             <button type="button" id="IdChk">중복확인</button>
                         </td>
                     </tr>
                     <tr>
-                        <td>패스워드</td>
-                        <td><input type="text" id="uPW"></td>
+                        <td>패스워드<span class="starSign">＊</span></td>
+                        <td>
+                            <input type="password" id="uPW" placeholder="패스워드를 입력하세요">
+                            <ul>
+                                <li>※ 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합하여 설정해주세요. (8~16자)</li>
+                                <li>※ 아이디와 4자리 이상 동일하거나, 4자리 이상 반복되는 문자와 숫자는 사용이 불가합니다.</li>
+                                <li>※ 사용 가능 특수문자: !”#$%’()*+,-./:;<=>?@[]^_`{|}~</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
-                        <td>패스워드 확인</td>
-                        <td></td>
+                        <td>패스워드 확인<span class="starSign">＊</span></td>
+                        <td><input type="password" id="uPWRe" placeholder="패스워드를 재입력해주세요."></td>
                     </tr>
                     <tr>
-                        <td>휴대폰번호</td>
-                        <td></td>
+                        <td>휴대폰번호<span class="starSign">＊</span></td>
+                        <td>
+                            <input type="text" placeholder="010" readonly>-
+                            <input type="text" placeholder="1234" readonly>-
+                            <input type="text" placeholder="5678" readonly>
+                        </td>
                     </tr>
                     <tr>
-                        <td>이메일</td>
-                        <td></td>
+                        <td>이메일<span class="starSign">＊</span></td>
+                        <td>
+                            <input type="text" id="uEmail">@
+                            <input type="text">
+                            <select>
+                                <option>직접입력</option>
+                                <option>outback.co.kr</option>
+                                <option>empal.com</option>
+                                <option>naver.com</option>
+                                <option>gmail.com</option>
+                                <option>hanmail.net</option>
+                                <option>hanmir.com</option>
+                                <option>hitel.net</option>
+                                <option>hotmail.com</option>
+                                <option>korea.com</option>
+                                <option>lycos.co.kr</option>
+                                <option>nate.com</option>
+                            </select>
+                            <button type="button" id="emailChk">중복확인</button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>생일</td>
-                        <td></td>
+                        <td>생일<span class="starSign">＊</span></td>
+                        <td>
+                            <select></select>
+                            <ul>
+                                <li>※ 부메랑 클럽(부메랑 카드를 등록한 회원)에게는 생일 쿠폰이 제공 됩니다.</li>
+                                <li>※ 생일 쿠폰은 생일 당월 동안 사용 가능 합니다.</li>
+                                <li>※ 생일은 연 2회 수정 가능 하며, 쿠폰 사용 전 수정한 경우 수정한 월을 기준으로 재발급 됩니다.</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
-                        <td>포인트 비밀번호</td>
-                        <td></td>
+                        <td>포인트 비밀번호<span class="starSign">＊</span></td>
+                        <td>
+                            <input type="password" id="pointPW" placeholder="******" maxlength="6">
+                            <ul>
+                                <li>※ 부메랑 카드에 적립된 포인트 사용 시 간편 사용을 위한 비밀번호 입니다.</li>
+                                <li>※ 숫자 6자리로 설정 가능합니다.</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
-                        <td>포인트 비밀번호 확인</td>
-                        <td></td>
+                        <td>포인트 비밀번호 확인<span class="starSign">＊</span></td>
+                        <td>
+                            <input type="password" id="pointPWRe" placeholder="******" maxlength="6">
+                        </td>
                     </tr>
                     <tr>
                         <td>주소</td>
-                        <td></td>
+                        <td>
+                            <input type="text" class="address"> <button type="button" id="addressBtn">우편번호</button>
+                            <input type="text"> <input type="text">
+                            <input type="text">
+                            <ul>
+                                <li>※ 주소 입력은 선택 사항 입니다.</li>
+                                <li>※ 단, 주소가 없는 경우 이벤트 참여 시 경품 발송에 제약을 받을 수 있습니다.</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
-                        <td>마케팅 정보수신</td>
-                        <td></td>
+                        <td>마케팅 정보 수신</td>
+                        <td>
+                            <input type="checkbox" id="marketEmail"> E-mail 수신
+                            <input type="checkbox" id="marketSMS"> SMS 수신
+                            <ul>
+                                <li>※ 아웃백의 다양한 쿠폰 및 이벤트 혜택 정보(광고)를 만나 보실 수 있습니다.</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
                         <td>부메랑 카드등록</td>
-                        <td></td>
+                        <td>
+                            <p>모바일 카드 번호 발급<i class="fas fa-chevron-right"></i></p>
+                                <input type="text" class="mobileCard">-
+                                <input type="text" class="mobileCard">-
+                                <input type="text" class="mobileCard">-
+                                <input type="text" class="mobileCard">
+                            <button type="button" id="mobileCardUpdate">카드등록</button>
+
+                            <ul>
+                                <li>※ 매장에서 부메랑카드(또는 스티커)를 발급받으신 카드번호를 입력해주시기 바랍니다.</li>
+                                <li>※ 모바일카드 발급을 원하시는 고객님께서는 위쪽 모바일카드 번호발급 버튼을 클릭 해 주시기 바랍니다. </li>
+                                <li>※ 모바일 카드는 재발급이 불가능 합니다.</li>
+                                <li>※ 아웃백 신한카드를 발급하신 고객님이시라면, 회원 가입 후 익일에 포인트 및 쿠폰이 이관됩니다.</li>
+                            </ul>
+                        </td>
                     </tr>
                 </table>
+
+                <button type="button" id="joinBtn">확인</button>
 
             </div>
 
