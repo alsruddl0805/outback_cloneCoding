@@ -139,7 +139,7 @@
                     </tr>
                     <tr>
                         <td>생년월일<span class="starSign">＊</span></td>
-                        <td>1111.11.11</td>
+                        <td>1998.01.01</td>
                     </tr>
                     <tr>
                         <td>아이디<span class="starSign">＊</span></td>
@@ -161,23 +161,23 @@
                     </tr>
                     <tr>
                         <td>패스워드 확인<span class="starSign">＊</span></td>
-                        <td><input type="password" id="uPWRe" placeholder="패스워드를 재입력해주세요."></td>
+                        <td><input type="password" id="uPWRe" placeholder="패스워드를 재입력해주세요"></td>
                     </tr>
                     <tr>
                         <td>휴대폰번호<span class="starSign">＊</span></td>
                         <td>
-                            <input type="text" placeholder="010" readonly>-
-                            <input type="text" placeholder="1234" readonly>-
-                            <input type="text" placeholder="5678" readonly>
+                            <input type="text" placeholder="010" readonly class="uNum"> -
+                            <input type="text" placeholder="1234" readonly class="uNum"> -
+                            <input type="text" placeholder="5678" readonly class="uNum">
                         </td>
                     </tr>
                     <tr>
                         <td>이메일<span class="starSign">＊</span></td>
                         <td>
-                            <input type="text" id="uEmail">@
-                            <input type="text">
-                            <select>
-                                <option>직접입력</option>
+                            <input type="text" id="emailID" class="uEmail"> @
+                            <input type="text" id="emailAddress">
+                            <select  id="select_email" class="uEmail">
+                                <option value="">직접입력</option>
                                 <option>outback.co.kr</option>
                                 <option>empal.com</option>
                                 <option>naver.com</option>
@@ -196,7 +196,9 @@
                     <tr>
                         <td>생일<span class="starSign">＊</span></td>
                         <td>
-                            <select></select>
+                            <select id="select_year" class= "uBirth"></select>
+                            <select id="select_month" class= "uBirth"></select>
+                            <select id="select_day" class= "uBirth"></select>
                             <ul>
                                 <li>※ 부메랑 클럽(부메랑 카드를 등록한 회원)에게는 생일 쿠폰이 제공 됩니다.</li>
                                 <li>※ 생일 쿠폰은 생일 당월 동안 사용 가능 합니다.</li>
@@ -223,9 +225,9 @@
                     <tr>
                         <td>주소</td>
                         <td>
-                            <input type="text" class="address"> <button type="button" id="addressBtn">우편번호</button>
-                            <input type="text"> <input type="text">
-                            <input type="text">
+                            <input type="text" class="address"> <button type="button" id="addressBtn">우편번호</button> <br>
+                            <input type="text" class="address"> <input type="text" class="address"> <br>
+                            <input type="text" class="address">
                             <ul>
                                 <li>※ 주소 입력은 선택 사항 입니다.</li>
                                 <li>※ 단, 주소가 없는 경우 이벤트 참여 시 경품 발송에 제약을 받을 수 있습니다.</li>
@@ -235,8 +237,16 @@
                     <tr>
                         <td>마케팅 정보 수신</td>
                         <td>
-                            <input type="checkbox" id="marketEmail"> E-mail 수신
-                            <input type="checkbox" id="marketSMS"> SMS 수신
+                            <label class="chkboxContainer">
+                                <input type="checkbox" id="emailAgree">
+                                <span>E-mail 수신</span>
+                                <span class="chkboxCheckmark"></span>
+                            </label>
+                            <label class="chkboxContainer">
+                                <input type="checkbox" id="SMSAgree">
+                                <span>SMS 수신</span>
+                                <span class="chkboxCheckmark"></span>
+                            </label>
                             <ul>
                                 <li>※ 아웃백의 다양한 쿠폰 및 이벤트 혜택 정보(광고)를 만나 보실 수 있습니다.</li>
                             </ul>
