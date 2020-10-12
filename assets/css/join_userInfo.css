@@ -155,7 +155,7 @@ main {
 #userInfoArea table tr td:first-child {
     background-color: #f9f9f9;
     text-align: left;
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
 #userInfoArea table tr td:nth-child(2) {
@@ -245,6 +245,9 @@ select.uBirth {
     width: 415px;
 }
 
+span.agreeText {
+    margin: 0 30px;
+}
 
 /*체크박스 사라지게 하기*/
 
@@ -260,8 +263,7 @@ select.uBirth {
 
 .chkboxCheckmark {
     position: absolute;
-    top: 2px;
-    right: 260px;
+    margin-top: 1px;
     width: 20px;
     height: 20px;
     color: #cccccc;
@@ -302,3 +304,4 @@ select.uBirth {
 }
 
 /* 체크박스 커스텀 끝 */
+
