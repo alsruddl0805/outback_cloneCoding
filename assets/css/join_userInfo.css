@@ -154,6 +154,10 @@ main {
     border-bottom: 1px solid #dedede;
 }
 
+#userInfoArea table tr:last-child td {
+    border-bottom: 1px solid #aaa;
+}
+
 #userInfoArea table tr td:first-child {
     background-color: #f9f9f9;
     text-align: left;
@@ -168,6 +172,12 @@ main {
 #userInfoArea table tr td:nth-child(2) input {
     height: 44px;
     border: 1px solid #dedede;
+    transition: 0.3s;
+}
+
+#userInfoArea table tr td:nth-child(2) input:focus {
+    border: 1px solid #000;
+    transition: 0.3s;
 }
 
 #userInfoArea table tr td input {
@@ -218,14 +228,14 @@ input::placeholder {
 
 select.uEmail {
     height: 47px;
-    border: 1px solid #dedede;
+    border: 1px solid #000;
     outline: none;
     margin-left: 5px;
 }
 
 select.uBirth {
     height: 47px;
-    border: 1px solid #dedede;
+    border: 1px solid #000;
     outline: none;
     margin-top: 10px;
 }

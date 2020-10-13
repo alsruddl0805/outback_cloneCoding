@@ -143,7 +143,7 @@
                     <tr>
                         <td>문의 유형 선택</td>
                         <td>
-                            <section id="inquiryType"></section>
+                            <select id="inquiryType"></select>
                         </td>
                     </tr>
                     <tr>
@@ -258,15 +258,18 @@
                     <tr>
                         <td>내용</td>
                         <td>
-                            <input type="text" id="content">
+                            <textarea id="content"></textarea>
                             <p>※ 아웃백에 관한 고객님의 의견을 적어주세요 (최대 국문 4,000자/ 영문 8,000자 입력 가능)</p>
                         </td>
                     </tr>
                     <tr>
                         <td>첨부파일</td>
                         <td>
-                            <input type="file" id="addFile">
-                            <button id="findFile">찾아보기</button>
+                            <div class="filebox">
+                                <input id="file-upload-name" class="file-upload-name" disabled="disabled">
+                                <label for="file-input"><span>찾아보기</span></label>
+                                <input type="file" id="file-input">
+                             </div>
                             <p>※ 첨부파일 용량 제한 2M/ 이미지파일(JPG, GIF, PNG, BMP) 첨부 가능</p>
                         </td>
                     </tr>
@@ -289,8 +292,10 @@
                 </table>
                 </form>
 
-                <button type="button" id="inquiryBtn">문의하기</button>
-                <button type="button" id="cancleBtn">취소하기</button>
+                <p id="btnArea">
+                    <button type="button" id="inquiryBtn">문의하기</button>
+                    <button type="button" id="cancleBtn">취소하기</button>
+                </p>
 
             </div>
 

@@ -1,3 +1,8 @@
+// inquiry_보완
+// 1. input:date 속성 수정
+// 2. 유효성 검사
+// 3. 파일첨부 js 확인
+
 // mainBar
 
 $("#mainBar>li:nth-child(2),#mainBar>li:nth-child(3)").click(function(){
@@ -5,6 +10,19 @@ $("#mainBar>li:nth-child(2),#mainBar>li:nth-child(3)").click(function(){
     $(this).toggleClass('mainBarStyle');
     $(this).children(".subBar").toggleClass('subBarStyle');
   });
+
+    // inquiryType option 추가
+
+let inquiryType = ["매장서비스","딜리버리 서비스","부메랑 클럽","홈페이지 및 APP","이벤트","제휴 서비스","지류상품권",
+"기프트카드/모바일상품권","채용문의","기타"];
+let addinquiryOption = "";
+
+for (let i = 0; i<inquiryType.length; i++) {
+  addinquiryOption += "<option>" + inquiryType[i] + "</option>";
+}
+
+let select_inquiry = document.querySelector("#inquiryType");
+select_inquiry.innerHTML = addinquiryOption;
 
   // email option 추가
 
@@ -47,3 +65,34 @@ for (let i = 0; i<store.length; i++) {
 
 let outbackStore = document.querySelector("#outbackStore");
 outbackStore.innerHTML = addStoreOption;
+
+
+//첨부파일 확장자 체크
+// let checkFile = document.querySelector("#file-input");
+// checkFile.addEventListener("change", attachmentSubmit);
+
+// function attachmentSubmit() {
+//   let attachment = document.querySelector('#file-input').value;
+//   attachment = attachment.slice(attachment.indexOf(".") + 1).toLowerCase();
+  
+//   if (attachment !== "pdf" && attachment !== "docx" && attachment !== "pptx" && attachment !== "xlsx" && attachment !== "jpg" && attachment !== "gif" && attachment !== "png") {
+//     alert("첨부가 불가능한 파일입니다.\n실행파일 또는 소스파일은 업로드 불가 입니다."); 
+//   }
+  
+// }
+
+// //파일 선택 시 나타내주기
+
+// $(document).ready(function(){ 
+//   let fileTarget = $(".filebox #file-input"); 
+//   fileTarget.on("change", function(){     // 값이 변경되면 
+//     if(window.FileReader){ // modern browser 
+//       var filename = $(this)[0].files[0].name; 
+//     } 
+//     else { // old IE 
+//       var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+//     } 
+//     // 추출한 파일명 삽입 
+//     $(this).siblings(".file-upload-name").val(filename); 
+//   }); 
+// });
