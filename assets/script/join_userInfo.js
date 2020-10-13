@@ -1,7 +1,4 @@
 // join_userInfo 보완
-// 1. 이메일 유효성 검사
-// 2. 포인트 비밀번호 길이 제한
-// 3. 이름, 생년월일, 휴대폰번호 입력칸 생성
 
 // mainBar
 
@@ -141,23 +138,41 @@ uEmailChkBtn.addEventListener("click",function(){
 let joinBtn = document.querySelector("#joinBtn");
 joinBtn.addEventListener("click",function(){
   
+  let uName = document.querySelector("#uName");
   let uID = document.querySelector("#uID");
   let uPW = document.querySelector("#uPW");
   let uPWRe = document.querySelector("#uPWRe");
+  let uNum_01 = document.querySelector("#uNum_01");
+  let uNum_02 = document.querySelector("#uNum_02");
+  let uNum_03 = document.querySelector("#uNum_03");
   let emailID = document.querySelector("#emailID");
   let emailAddress = document.querySelector("#emailAddress");
   let pointPW = document.querySelector("#pointPW");
   let pointPWRe = document.querySelector("#pointPWRe");
 
-  // 아이디, 비밀번호 유효성 검사
+  // 이름, 아이디, 비밀번호 유효성 검사
+
+  let NameExp = /[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+  let NameExpRes = NameExp.test(uName.value);
 
   let IDExp = /[^a-z|A-Z|0-9|]/;
   let IDExpRes = IDExp.test(uID.value);
 
   let PWExp = /[^a-z|A-Z|0-9|!”#$%’()*+,-./:;<=>?@_`{}~]/;
   let PWExpRes = PWExp.test(uPW.value);
+
+  let NumberExp = /[^0-9]/;
+  let NumberExpRes_01 = NumberExp.test(uNum_01);
+  let NumberExpRes_02 = NumberExp.test(uNum_02);
+  let NumberExpRes_03 = NumberExp.test(uNum_03);
   
-  if (uID.value.trim() == "") {
+  if (uName.value.trim() == "") {
+    alert("이름을 입력해주세요.");
+    uName.focus();
+  } else if (NameExpRes) {
+    alert("이름은 한글만 입력 가능합니다."); 
+    uName.select(); // 이름 끝
+  } else if (uID.value.trim() == "") {
     alert("아이디를 입력해주세요.");
     uID.focus();
   } else if (IDExpRes) {
@@ -187,6 +202,15 @@ joinBtn.addEventListener("click",function(){
   } else if (uPW.value.trim() != uPWRe.value.trim()) {
     alert("패스워드가 일치하지 않습니다.");
     uPWRe.select(); // 비밀번호 끝
+  } else if (uNum_01.value.trim() == "" || uNum_02.value.trim() == "" || uNum_03.value.trim() == "") {
+    alert("휴대폰번호를 입력해주세요.");
+    uNum_01.focus();
+  } else if (uNum_01.value.length < 3 || uNum_02.value.length < 4 || uNum_03.value.length < 4) {
+    alert("휴대폰번호를 정확하게 입력해주세요.");
+    uNum_01.focus();
+  } else if (NumberExpRes_01 && NumberExpRes_02 && NumberExpRes_03) {
+    alert("휴대폰번호는 숫자만 입력가능합니다.");
+    uNum_01.focus();
   } else if (emailID.value.trim() == "") {
     alert("이메일을 입력해주세요.");
     emailID.focus();
@@ -198,6 +222,9 @@ joinBtn.addEventListener("click",function(){
     uEmailChkBtn.focus(); // 이메일 끝
   } else if (pointPW.value.trim() == "") {
     alert("포인트 비밀번호를 입력해주세요.");
+    pointPW.focus();
+  } else if (pointPW.value.length < 6 || pointPW.value.length > 6) {
+    alert("포인트 비밀번호는 6자리로 설정 가능합니다.");
     pointPW.focus();
   } else if (pointPWRe.value.trim() == "") {
     alert("포인트 비밀번호를 확인해주세요.");

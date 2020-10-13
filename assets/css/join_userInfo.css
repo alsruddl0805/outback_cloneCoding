@@ -204,7 +204,7 @@ input::placeholder {
     font-size: 15px;
 }
 
-#uID, #uPW, #uPWRe {
+#uName, #uID, #uPW, #uPWRe {
     width: 334px;
 }
 
