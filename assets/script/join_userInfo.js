@@ -6,6 +6,19 @@ $("#mainBar>li:nth-child(2),#mainBar>li:nth-child(3)").click(function(){
     $(this).children(".subBar").toggleClass('subBarStyle');
   });
 
+  // email option 추가
+
+  let email = ["직접입력","outback.co.kr","empal.com","naver.com","gmail.com","hanmail.net","hanmir.com","hitel.net",
+  "hotmail.com","korea.com","lycos.co.kr","nate.com"];
+  let addEmailOption = "";
+  
+  for (let i = 0; i<email.length; i++) {
+      addEmailOption += "<option>" + email[i] + "</option>";
+  }
+  
+  let select_Email = document.querySelector("#select_email");
+  select_Email.innerHTML = addEmailOption;
+
 // email select 
 
 let Email = document.querySelector("#select_email");

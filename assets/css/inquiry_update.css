@@ -83,11 +83,11 @@ main>p:first-child>span {
 }
 
 #menuList #mainBar>li:nth-child(3) i {
-    padding-left: 160px;
+    padding-left: 150px;
 }
 
 #menuList #mainBar>li:last-child {
-    width: 555px;
+    width: 590px;
     text-align: right;
     font-size: 14px;
 }
@@ -137,7 +137,18 @@ main>p:first-child>span {
 
 #inquiryArea {
     width: 1180px;
+    padding: 80px 0 100px;
     border: 1px solid #000;
+}
+
+#inquiryArea p {
+    font-size: 26px;
+    padding-bottom: 20px;
+}
+
+#inquiryArea p span {
+    font-size: 14px;
+    color: #666;
 }
 
 #inquiryArea table {
@@ -153,6 +164,7 @@ main>p:first-child>span {
 }
 
 #inquiryArea table tr td:first-child {
+    width: 235px;
     background-color: #f9f9f9;
     text-align: left;
     padding-left: 20px;
@@ -168,7 +180,7 @@ main>p:first-child>span {
     border: 1px solid #dedede;
 }
 
-#inquiryArea table tr td input {
+#inquiryArea table tr td p {
     outline: none;
     padding-left: 10px;
 }
@@ -187,17 +199,138 @@ main>p:first-child>span {
     cursor: pointer;
 }
 
-#inquiryArea table tr td ul {
-    margin: 10px 0;
-}
-
-#inquiryArea table tr td ul li {
-    font-size: 13px;
-    color: #888;
-    line-height: 20px;
-}
-
 input::placeholder {
     color: #000;
     font-size: 15px;
-}\
+}
+
+#uName {
+    width: 195px;
+}
+
+tr:nth-child(3) td input {
+    width: 144px;
+}
+
+#emailID, #emailAddress {
+    width: 235px;
+}
+
+#select_email {
+    width: 159px;
+    height: 46px;
+    border: 1px solid #000;
+    outline: none;
+}
+
+#outbackStore {
+    width: 334px;
+    height: 46px;
+    border: 1px solid #000;
+    outline: none;
+    font-size: 15px;
+    padding: 5px;
+}
+
+fieldset {
+    border: none;
+    margin-top: 10px;
+}
+
+label {
+    padding: 0 15px;
+}
+
+#inquiryArea table tr:nth-child(11) input {
+    margin-top: 10px;
+}
+
+#inquiryArea table tr:nth-child(11) p, 
+#inquiryArea table tr:nth-child(12) p{
+    font-size: 13px;
+    color: #888;
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+#inquiryArea table tr:last-child iframe {
+    width: 885px;
+    height: 280px;
+    margin-top: 10px;
+    border: 1px solid #dedede;
+}
+
+#inquiryArea table tr:last-child fieldset{
+    text-align: right;
+}
+
+/* 라디오박스 커스텀 시작 */
+
+/* The container */
+.radioContainer {
+    display: inline-block;
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default radio button */
+  .radioContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .radioboxCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .radioContainer:hover input ~ .radioboxCheckmark {
+    background-color: #fff;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  .radioContainer input:checked ~ .radioboxCheckmark {
+    border: 1px solid #aaa;
+    background-color: #fff;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .radioboxCheckmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  .radioContainer input:checked ~ .radioboxCheckmark:after {
+    display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .radioContainer .radioboxCheckmark:after {
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #cb0000;
+      transition: all 2s;
+  }
+
+/* 라디오박스 커스텀 끝 */
