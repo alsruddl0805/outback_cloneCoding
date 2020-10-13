@@ -178,7 +178,7 @@ main>p:first-child>span {
     padding: 0 20px;
 }
 
-#inquiryArea table tr td:nth-child(2) input:not(#file-upload-name) {
+#inquiryArea table tr td:nth-child(2) input {
     height: 44px;
     border: 1px solid #dedede;
     transition: 0.3s;
@@ -233,8 +233,14 @@ table tr td select {
     width: 334px;
 }
 
-#wentDay {
+#visitDate {
     width: 194px;
+}
+
+tr:nth-child(6) td:nth-child(2) img {
+    position: relative;
+    left: -40px;
+    top: 5px;
 }
 
 fieldset {

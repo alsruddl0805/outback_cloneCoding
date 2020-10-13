@@ -161,7 +161,7 @@ joinBtn.addEventListener("click",function(){
   let pointPW = document.querySelector("#pointPW");
   let pointPWRe = document.querySelector("#pointPWRe");
 
-  // 이름, 아이디, 비밀번호 유효성 검사
+  // 이름, 아이디, 비밀번호, 전화번호 유효성 검사
 
   let NameExp = /[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
   let NameExpRes = NameExp.test(uName.value);
