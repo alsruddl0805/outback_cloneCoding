@@ -1,5 +1,3 @@
-// join_userInfo 보완
-
 // mainBar
 
 $("#mainBar>li:nth-child(2),#mainBar>li:nth-child(3)").click(function(){
@@ -162,9 +160,9 @@ joinBtn.addEventListener("click",function(){
   let PWExpRes = PWExp.test(uPW.value);
 
   let NumberExp = /[^0-9]/;
-  let NumberExpRes_01 = NumberExp.test(uNum_01);
-  let NumberExpRes_02 = NumberExp.test(uNum_02);
-  let NumberExpRes_03 = NumberExp.test(uNum_03);
+  let NumberExpRes_01 = NumberExp.test(uNum_01.value);
+  let NumberExpRes_02 = NumberExp.test(uNum_02.value);
+  let NumberExpRes_03 = NumberExp.test(uNum_03.value);
   
   if (uName.value.trim() == "") {
     alert("이름을 입력해주세요.");
@@ -205,12 +203,12 @@ joinBtn.addEventListener("click",function(){
   } else if (uNum_01.value.trim() == "" || uNum_02.value.trim() == "" || uNum_03.value.trim() == "") {
     alert("휴대폰번호를 입력해주세요.");
     uNum_01.focus();
-  } else if (uNum_01.value.length < 3 || uNum_02.value.length < 4 || uNum_03.value.length < 4) {
-    alert("휴대폰번호를 정확하게 입력해주세요.");
-    uNum_01.focus();
-  } else if (NumberExpRes_01 && NumberExpRes_02 && NumberExpRes_03) {
+  } else if (NumberExpRes_01 || NumberExpRes_02 || NumberExpRes_03) {
     alert("휴대폰번호는 숫자만 입력가능합니다.");
     uNum_01.focus();
+  } else if (uNum_01.value.length < 3 || uNum_02.value.length < 4 || uNum_03.value.length < 4) {
+    alert("휴대폰번호를 정확하게 입력해주세요.");
+    uNum_01.focus(); // 휴대폰번호 끝
   } else if (emailID.value.trim() == "") {
     alert("이메일을 입력해주세요.");
     emailID.focus();
