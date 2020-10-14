@@ -246,6 +246,39 @@
 
     </div>
 
+    <section id="modal_savePoint">
+        <div id="modal_popup">
+            <p>[사후적립 서비스가 준비중입니다]</p>
+
+            <div id="modal_receiptArea">
+            <img src="../assets/images/receipt.png" alt="영수증">
+            <table>
+                <tr>
+                    <th>결제 금액</th>
+                    <td>
+                        <input type="text" placeholder="결제 금액을 입력하세요."> 원
+                        <p>※ 제휴할인/쿠폰/할인권 등의 할인금액을 제외한<br>부가세 포함 최종 결제금액</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>영수증 번호</th>
+                    <td>
+                        <input type="text" placeholder="영수증 번호를 입력하세요.">
+                        <p>※ 영수증 하단 사후적립번호 숫자 18자리 입력(“-” 제외)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span>포인트 적립</span></td>
+                </tr>
+            </table>
+            </div>
+            
+            <p>
+                <button type="button" id="modalClose"><i class="fas fa-times"></i></button>
+            </p>
+        </div>
+    </section>
+
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../assets/script/jquery-3.5.1.min.js"></script>
     <script src="../assets/script/common.js"></script>

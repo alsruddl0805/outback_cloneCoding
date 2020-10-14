@@ -289,3 +289,117 @@ footer {
 #footer ul li span.telNum {
     font-size: 18px;
 }
+
+
+#modal_savePoint {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+#modal_popup {
+    width: 1180px;
+    border-radius: 20px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#modal_popup p:first-child {
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    background-color: #cb0000;
+    color: #fff;
+    font-size: 26px;
+}
+
+#modal_receiptArea {
+    display: flex;
+    padding: 40px;
+}
+
+#modal_receiptArea table {
+    width: 600px;
+    border-top: 1px solid #000;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#modal_receiptArea table tr td {
+    width: 400px;
+    height: 71px;
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+#modal_receiptArea table tr th {
+    background-color: #f9f9f9;
+}
+
+#modal_receiptArea table tr th,
+#modal_receiptArea table tr td {
+    border-bottom: 1px solid #dedede;
+}
+
+#modal_receiptArea table tr td input {
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid #dedede;
+    outline: none;
+}
+
+#modal_receiptArea table tr td input::placeholder {
+    padding-left: 10px;
+}
+
+#modal_receiptArea table tr td p {
+    margin: 10px 0;
+    color: #666;
+}
+
+#modal_receiptArea table tr:last-child td {
+    text-align: center;
+    border-bottom: none;
+}
+
+#modal_receiptArea table tr:last-child td span {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+}
+
+#modal_popup p:last-child {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#modal_popup #modalClose {
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: none;
+    color: #cb0000;
+    outline: none;
+    cursor: pointer;
+}
+
+#modal_popup #modalClose:hover {
+    background-color: #cb0000;
+    color: #fff;
+}

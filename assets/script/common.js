@@ -27,7 +27,22 @@ naverReserve.href = "https://map.naver.com/v5/search/%EC%95%84%EC%9B%83%EB%B0%B1
 
 // save point 
 
+let modalPopup = document.querySelector("#modal_savePoint");
 
+let modalOpen = document.querySelector("#addMenu ul li:nth-child(2)");
+modalOpen.addEventListener("click",modal_Open);
+
+let modalClose = document.querySelector("#modalClose");
+modalClose.addEventListener("click",modal_Close);
+// + 배경 눌러도 취소되게 하기
+
+function modal_Open() {
+    modalPopup.style.display = "block";
+}
+
+function modal_Close() {
+    modalPopup.style.display = "none";
+}
 
 // sns 주소 연동
 
