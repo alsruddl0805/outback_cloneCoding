@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+main {
+    position: relative;
+    top:100px;
+}
+
+main>p {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+main>p img {
+    width: 100%;
+    min-width: 1900px;
+}
+
+/*menuList 시작*/
+
+#menuList {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
+
+#menuList #mainBar {
+    width: 1180px;
+    height: 50px;
+    margin: 0 auto;
+    border-left: 1px solid #dedede;
+}
+
+#menuList #mainBar>li {
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    position: relative;
+    color: #bbb;
+}
+
+#menuList #mainBar li a:not(.active) {
+    color: #bbb;
+    transition: 0.3s;
+}
+
+#menuList #mainBar li a:hover {
+    color: #000;
+}
+
+#menuList #mainBar .subBar li a:hover {
+    text-decoration: underline;
+}
+
+#menuList #mainBar>li:first-child {
+    width: 61px;
+    border-right: 1px solid #dedede;
+}
+
+#menuList #mainBar>li:nth-child(2) {
+    width: 243px;
+    border-right: 1px solid #dedede;
+}
+
+#menuList #mainBar>li:nth-child(2) i {
+    padding-left: 100px;
+}
+
+#menuList #mainBar>li:nth-child(3) {
+    width: 278px;
+    border-right: 1px solid #dedede;
+}
+
+#menuList #mainBar>li:nth-child(3) i {
+    padding-left: 140px;
+}
+
+#menuList #mainBar>li:last-child {
+    width: 590px;
+    text-align: right;
+    font-size: 14px;
+}
+
+#menuList #mainBar>li:last-child span {
+    color: #000;
+}
+
+#menuList .subBar {
+    width: 243px;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    position: absolute;
+    left: -1px;
+    z-index: 9999;
+}
+
+#menuList li:nth-child(3) .subBar {
+    width: 278px;
+    left: -1px;
+}
+
+#menuList .subBar li {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.mainBarStyle {
+    border: 1px solid #000 !important;
+    border-bottom: none;
+    box-shadow: 1px 7px 10px #aaa;
+    left: -1px;
+    top: -1px;
+}
+
+.subBarStyle {
+    border: 1px solid #000 !important;
+    box-shadow: 1px 7px 10px #aaa;
+}
+
+.subBar li a.active {
+    text-decoration: underline;
+}
+
+/*menuList 종료*/
+
+#inquiryContentArea {
+    width: 1180px;
+    padding: 80px 0 120px;
+}
+
+#inquiryContentArea p {
+    font-size: 26px;
+    padding-bottom: 20px;
+}
+
+#inquiryContentArea table {
+    width: 1180px;
+    border-top: 1px solid #000;
+    border-collapse: collapse;
+}
+
+#inquiryContentArea table tr td {
+    height: 71px;
+    border-bottom: 1px solid #dedede;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+#inquiryContentArea table tr:last-child td {
+    border-bottom: 1px solid #aaa;
+}
+
+#inquiryContentArea table tr:first-child td {
+    width: 295px;
+}
+
+#inquiryContentArea table tr:not(:last-child) td:first-child {
+    background-color: #f9f9f9;
+}
+
+#inquiryContentArea table tr:first-child td:nth-child(3) {
+    background-color: #f9f9f9;
+}
+
+#inquiryContentArea table tr:first-child td:nth-child(2),
+#inquiryContentArea table tr:first-child td:last-child,
+#inquiryContentArea table tr:nth-child(3) td:nth-child(2),
+#inquiryContentArea table tr:last-child td {
+    color: #666;
+}
+
+#inquiryContentArea table tr:last-child td {
+    line-height: 40px;
+    padding: 30px;
+}
+
+#listBtn {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    border: 1px solid #999;
+    background-color: #fff;
+    margin-top: 20px;
+    outline: none;
+}
