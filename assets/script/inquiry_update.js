@@ -1,7 +1,5 @@
 // inquiry_보완
-// 1. input:date 라이브러리 날짜 고치기
-// 2. 유효성 검사 완료
-// 3. textarea 글자 수 제한
+// 1. 유효성 검사 완료
 
 // mainBar
 
@@ -67,11 +65,27 @@ let outbackStore = document.querySelector("#outbackStore");
 outbackStore.innerHTML = addStoreOption;
 
 // 달력 나타내기
-//https://github.com/Pikaday/Pikaday
 
-var picker = new Pikaday({ 
+let picker = new Pikaday({ 
   field: document.getElementById('visitDate')
 });
+
+
+// textarea 글자 수 제한
+
+let numOfChar = 4000;
+
+let contentText = document.querySelector("#content");
+contentText.addEventListener("keyup",function(){
+    let contentVal = contentText.value;
+    let len = contentVal.length;
+      if (len > numOfChar) {
+        contentVal = contentVal.substring(0,numOfChar);
+        document.querySelector("#content").value = contentVal;
+        len = contentText.length;
+      }
+});
+
 
 //첨부파일 확장자 체크
 let checkFile = document.querySelector("#file-input");
@@ -84,19 +98,18 @@ function attachmentSubmit() {
   if (attachment !== "jpg" && attachment !== "gif" && attachment !== "png" && attachment !== "bmp") {
     alert("파일 업로드는확장자가 JPG, JPEG, GIF, PNG, BMP 인 파일만 업로드 가능 합니다."); 
   }
-  
 }
 
 //파일 선택 시 나타내주기
 
 $(document).ready(function(){ 
   let fileTarget = $(".filebox #file-input"); 
-  fileTarget.on("change", function(){     // 값이 변경되면 
-    if(window.FileReader){ // modern browser 
+  fileTarget.on("change", function(){
+    if(window.FileReader){ 
       var filename = $(this)[0].files[0].name; 
     } 
     else { // old IE 
-      var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+      var filename = $(this).val().split('/').pop().split('\\').pop();
     } 
     // 추출한 파일명 삽입 
     $(this).siblings(".file-upload-name").val(filename); 
@@ -116,6 +129,9 @@ inquiryBtn.addEventListener("click",function(){
   let emailAddress = document.querySelector("#emailAddress");
   let select_store = document.querySelector("#outbackStore");
   let visitDate = document.querySelector("#visitDate");
+  let title = document.querySelector("#title");
+  let content = document.querySelector("#content");
+  let useAgree = document.querySelector("#agree").checked;
 
   // 이름, 전화번호 유효성 검사
 
@@ -127,8 +143,6 @@ inquiryBtn.addEventListener("click",function(){
   let NumberExpRes_02 = NumberExp.test(uNum_02.value);
   let NumberExpRes_03 = NumberExp.test(uNum_03.value);
   
-  // + 방문날짜, + 서비스 만족도, + 동반 고객, + 메뉴를 결정하게 된 계기,
-  // + 고객의 소리를 등록하시겠습니까? 질문 후 + 등록에 성공하였습니다. 후 다시 문의페이지
   if (uName.value.trim() == "") {
     alert("이름을 입력해주세요.");
     uName.focus();
@@ -156,12 +170,27 @@ inquiryBtn.addEventListener("click",function(){
   } else if (visitDate.value == "") {
     alert("방문하셨던 날짜를 선택해 주세요.");
     visitDate.focus();
-  } else if (attachment !== "jpg" && attachment !== "gif" && attachment !== "png" && attachment !== "bmp") {
-    alert("파일 업로드는확장자가 JPG, JPEG, GIF, PNG, BMP 인 파일만 업로드 가능 합니다."); 
-  } else {
+  } else if ($("input[name=satisfaction]:radio:checked").length<1) {
+    alert("서비스만족도를 체크해주세요.");
+    return false;
+  } else if ($("input[name=with]:radio:checked").length<1) {
+    alert("동반고객을 체크해주세요.");
+    return false;
+  } else if ($("input[name=menuSelect]:radio:checked").length<1) {
+    alert("메뉴를 결정하게 된 계기를 체크해주세요.");
+    return false;
+  } else if (title.value.trim() == "") {
+    alert("제목을 입력해주세요.");
+    title.focus();
+  } else if (content.value.trim() == "") {
+    alert("내용을 입력해주세요.");
+    content.focus();
+  } else if (useAgree == false) {
+    alert("개인정보수집이용에 동의를 해주세요.");
+  } else if (confirm("고객의 소리를 등록하시겠습니까?")) {
     alert("등록에 성공하였습니다.");
     document.querySelector("form").action = "inquiry_update.html";
-    document.querySelector("form").submit();
+    document.querySelector("form").submit(); 
   }
-  
+
 });
