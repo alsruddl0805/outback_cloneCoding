@@ -22,6 +22,8 @@ function login() {
           alert("비밀번호를 입력하세요.");
           uPW.focus();
       } else {
-          alert("존재하지 않는 아이디입니다.");
+          alert("로그인이 완료되었습니다.");
+          document.querySelector("form").action = "../index.html";
+          document.querySelector("form").submit();
       }
   }

@@ -23,7 +23,7 @@ function login() {
           uPW.focus();
       } else {
           alert("로그인 되었습니다.");
-          document.querySelector("form").action = "../pager/inquiry_update.html";
+          document.querySelector("form").action = "../pager/myoutback.html";
           document.querySelector("form").submit();
       }
   }
