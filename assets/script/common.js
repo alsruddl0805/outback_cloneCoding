@@ -34,7 +34,7 @@ modalOpen.addEventListener("click",modal_Open);
 
 let modalClose = document.querySelector("#modalClose");
 modalClose.addEventListener("click",modal_Close);
-// + 배경 눌러도 취소되게 하기
+
 
 function modal_Open() {
     modalPopup.style.display = "block";
@@ -43,6 +43,11 @@ function modal_Open() {
 function modal_Close() {
     modalPopup.style.display = "none";
 }
+
+// delivery
+
+let delivery = document.querySelector("#addMenu ul li:last-child a");
+delivery.href = "../pager/cart.html";
 
 // sns 주소 연동
 
