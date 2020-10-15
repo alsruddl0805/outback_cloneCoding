@@ -176,7 +176,7 @@ joinBtn.addEventListener("click",function(){
   let NumberExpRes_01 = NumberExp.test(uNum_01.value);
   let NumberExpRes_02 = NumberExp.test(uNum_02.value);
   let NumberExpRes_03 = NumberExp.test(uNum_03.value);
-  
+
   if (uName.value.trim() == "") {
     alert("이름을 입력해주세요.");
     uName.focus();

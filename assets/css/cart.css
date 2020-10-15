@@ -42,6 +42,7 @@ main {
     border-bottom: 1px solid #dedede;
 }
 
+#cartArea table tr th:first-child, 
 #cartArea table tr td:first-child {
     width: 80px;
 }
@@ -64,16 +65,19 @@ main {
     color: #666;
 }
 
-#cartArea table tr td:nth-child(4) span {
+#cartArea table tr td:nth-child(4) input {
+    width: 18px;
+    border: none;
+    text-align: center;
+}
+
+#cartArea table tr td:nth-child(4) span:first-child,
+#cartArea table tr td:nth-child(4) span:last-child {
     width: 18px;
     height: 18px;
     line-height: 15px;
     display: inline-block;
     cursor: pointer;
-}
-
-#cartArea table tr td:nth-child(4) span:first-child,
-#cartArea table tr td:nth-child(4) span:last-child {
     background-color: #f9f9f9;
     color: #888;
     border: 1px solid #aaa;
@@ -84,7 +88,7 @@ main {
     font-weight: bold;
 }
 
-#cartArea table tr:nth-child(4) td {
+#cartArea #priceArea td {
     height: 50px;
     text-align: right;
     font-size: 14px;
@@ -92,16 +96,16 @@ main {
     border-bottom: 1px solid #aaa;
 }
 
-#cartArea table tr:nth-child(4) td p {
+#cartArea #priceArea td p {
     display: inline-block;
 }
 
-#cartArea table tr:nth-child(5) td,
+#cartArea #deleteArea td,
 #cartArea table tr:last-child td {
     border-bottom: none;
 }
 
-#cartArea table tr:nth-child(5) td {
+#cartArea #deleteArea td {
     text-align: left;
     padding-left: 30px;
 }
@@ -141,7 +145,6 @@ label {
 .chkboxContainer input {
     position: absolute;
     opacity: 0;
-    cursor: pointer;
     width: 0;
     height: 0;
 }
@@ -155,6 +158,7 @@ label {
     color: #cccccc;
     background-color: #fff;
     border: 1px solid #ccc;
+    cursor: pointer;
 }
 
 /* 체크 되었을때 배경색 */
