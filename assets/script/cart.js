@@ -1,3 +1,8 @@
+// cart 보완
+// 1. 선택삭제 jQuery선택자 변경
+// 2. 상품 금액 계산
+// 3. 삭제 시 priceArea 값 초기화
+
 // 전체선택 활성화
 let allCheck = document.querySelector("#allCheck");
 let product_01 = document.querySelector("#product_01");
@@ -21,23 +26,32 @@ function allCheckFalse() {
 }
 
 // 선택삭제 활성화
-//  1.선택삭제를 누르면 confirm 창 띄우기
-// 2. 만약 1번이 checked 되어있다면 1번의 tr없애기
-// 3. 만약 2번이 checked 되어있다면 2 번의 tr없애기
-//https://tonks.tistory.com/141 참고
 
 let delBtn = document.querySelector("#chkDelete");
-// delBtn.addEventListener("click",function(){
-//     if (confirm("선택한 상품을 삭제하시겠습니까?")) {
-//         if (product_01_chk == false || product_02_chk == false) {
-//             alert("선택된 상품이 없습니다.");
-//         } else if (product_01.checked) {
-//             $("#cart_line_01").remove();
-//         } else if (product_02.checked) {
-//             $("#cart_line_02").remove();
-//         }
-//     }
-// });
+delBtn.addEventListener("click",function(){
+  let select_Chk = document.querySelectorAll(".select_Chk");
+  let cartTable = document.querySelector("#cartTable");
+  if (confirm("선택한 상품을 삭제하시겠습니까?")){
+    for (let i=0; i<select_Chk.length; i++) {
+      if (select_Chk[1].checked == false && select_Chk[2].checked == false){
+        alert("삭제할 상품을 선택해주세요.");
+        return;
+      } else if (select_Chk[0].checked) {
+        // cartTable.removeChild(cartTable.firstChild);
+        $("#cartTable tr:nth-child(2) td").remove();
+        $("#cartTable tr:nth-child(3) td").remove();
+      } else if (select_Chk[1].checked) {
+        $("#cartTable tr:nth-child(2) td").remove();
+      } else if (select_Chk[2].checked) {
+        $("#cartTable tr:nth-child(3) td").remove();
+      }
+    }
+  }
+});
+
+// 품절상품 삭제 버튼 활성화
+let soldoutDelete = document.querySelector("#soldoutDelete");
+soldoutDelete.addEventListener("click",function(){alert("품절된 상품이 존재하지 않습니다.");})
 
 // // minus,plus 버튼
 
