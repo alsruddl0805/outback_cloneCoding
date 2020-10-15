@@ -12,6 +12,7 @@ let pageBtn = document.querySelectorAll("#pageBtn li a");
 
 for (let i=0; i<pageBtn.length; i++) {
   pageBtn[i].addEventListener("focusin",function(){
+    pageBtn[0].classList.remove("pager");
     this.classList.add("pager");
   });
 }

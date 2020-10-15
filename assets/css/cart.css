@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+main {
+    position: relative;
+    top:100px;
+}
+
+#cartArea {
+    width: 1180px;
+    padding: 80px 0;
+    text-align: center;
+}
+
+#cartArea>p:first-child {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+#cartArea>p:nth-child(2) {
+    color: #666;
+}
+
+#cartArea table {
+    width: 1180px;
+    margin-top: 50px;
+    border-top: 1.5px solid #000;
+    border-collapse: collapse;
+}
+
+#cartArea table tr th {
+    height: 71px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #dedede;
+}
+
+#cartArea table tr td {
+    height: 80px;
+    text-align: center;
+    font-size: 15px;
+    border-bottom: 1px solid #dedede;
+}
+
+#cartArea table tr td:first-child {
+    width: 80px;
+}
+
+#cartArea table tr td:nth-child(2) {
+    width: 150px;
+    padding-top: 5px;
+}
+
+#cartArea table tr td:nth-child(3) {
+    text-align: left;
+}
+
+#cartArea table tr td:nth-child(3) ul li {
+    line-height: 25px;
+}
+
+#cartArea table tr td:nth-child(3) ul li:nth-child(2) {
+    font-size: 13px;
+    color: #666;
+}
+
+#cartArea table tr td:nth-child(4) span {
+    width: 18px;
+    height: 18px;
+    line-height: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#cartArea table tr td:nth-child(4) span:first-child,
+#cartArea table tr td:nth-child(4) span:last-child {
+    background-color: #f9f9f9;
+    color: #888;
+    border: 1px solid #aaa;
+    font-weight: bold;
+}
+
+#cartArea table tr td:last-child span {
+    font-weight: bold;
+}
+
+#cartArea table tr:nth-child(4) td {
+    height: 50px;
+    text-align: right;
+    font-size: 14px;
+    padding-right: 60px;
+    border-bottom: 1px solid #aaa;
+}
+
+#cartArea table tr:nth-child(4) td p {
+    display: inline-block;
+}
+
+#cartArea table tr:nth-child(5) td,
+#cartArea table tr:last-child td {
+    border-bottom: none;
+}
+
+#cartArea table tr:nth-child(5) td {
+    text-align: left;
+    padding-left: 30px;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+#chkDelete, #soldoutDelete {
+    height: 40px;
+    color: #cb0000;
+    border: 1px solid #cb0000;
+    background-color: #fff;
+    padding: 0 20px;
+}
+
+#cartArea #orderBtn {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    margin-top: 40px;
+    background: #cb0000;
+    color: #fff;
+}
+
+
+/* 커스텀 체크박스 구현 */
+
+/*체크박스 사라지게 하기*/
+
+label {
+    position: relative;
+}
+
+.chkboxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+.chkboxCheckmark {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    color: #cccccc;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+/* 체크 되었을때 배경색 */
+
+.chkboxContainer input:checked~.chkboxCheckmark {
+    background-color: #fff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.chkboxCheckmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+.chkboxContainer input:checked~.chkboxCheckmark:after {
+    display: block;
+}
+
+.chkboxContainer .chkboxCheckmark:after {
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 8px;
+    border: solid #cb0000;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* 체크박스 커스텀 끝 */
