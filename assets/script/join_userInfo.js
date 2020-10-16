@@ -40,7 +40,7 @@ let Month= document.querySelector("#select_month");
 Year.addEventListener("change",lastday);
 Month.addEventListener("change",lastday);
 
-let start_year="1998";
+let start_year="1920";
 let today= new Date(); 
 let today_year= today.getFullYear(); 
 let index=0; 

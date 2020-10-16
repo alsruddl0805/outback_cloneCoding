@@ -6,6 +6,7 @@
     <title>장바구니 | 아웃백 (권민경)</title>
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/cart.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../assets/script/jquery-3.5.1.min.js"></script>
     <script defer src="../assets/script/common.js"></script>
     <script defer src="../assets/script/cart.js"></script>
@@ -103,7 +104,7 @@
                         <th colspan="2">상품정보</th>
                         <th>수량</th>
                         <th>상품금액</th>
-                    </tr>
+                    </tr> <!--thead-->
                     <tr>
                         <td>
                             <label class="chkboxContainer">
@@ -119,14 +120,14 @@
                             </ul>
                         </td>
                         <td>
-                            <span id="minus_01">-</span>
-                            <input type="text" id="product_01_cnt" value="1">
-                            <span id="plus_01">+</span>
+                            <span class="minusBtn">-</span>
+                            <input type="text" class="product_cnt" value="1">
+                            <span class="plusBtn">+</span>
                         </td>
                         <td>
-                            <span id="product_01_price">18,500</span> 원
+                            <input type="text" class="product_price" value="18500" readonly> 원
                         </td>
-                    </tr>
+                    </tr> <!--product_01 Line-->
                     <tr>
                         <td>
                             <label class="chkboxContainer">
@@ -142,27 +143,27 @@
                             </ul>
                         </td>
                         <td>
-                            <span>-</span>
-                            <input type="text" id="product_02_cnt" value="1">
-                            <span>+</span>
+                            <span class="minusBtn">-</span>
+                            <input type="text" class="product_cnt" value="1">
+                            <span class="plusBtn">+</span>
                         </td>
                         <td>
-                            <span>17,900</span> 원
+                            <input type="text" class="product_price" value="17900" readonly> 원
                         </td>
-                    </tr>
+                    </tr> <!--product_01 Line-->
                     <tr id="priceArea">
                         <td colspan="5">
-                            <p>상품 금액 <span>0</span></p> +
-                            <p>배송비 <span>0</span></p> =
-                            <p>결제예정금액 <span id="totalPrice">18,500</span> 원</p>
+                            <p>상품 금액 <input type="text" class="totalPrice" readonly> </p> +
+                            <p>배송비 <input type="text" value="2500" readonly></p> =
+                            <p>결제예정금액 <input type="text" class="totalPrice" readonly>원</p>
                         </td>
-                    </tr>
+                    </tr> <!--결제 예정금액 Line-->
                     <tr id="deleteArea">
                         <td colspan="5">
                             <button type="button" id="chkDelete">선택 삭제</button>
                             <button type="button" id="soldoutDelete">품절 상품 삭제</button>
                         </td>
-                    </tr>
+                    </tr> <!--상품 삭제 Line-->
                     <tr>
                         <td colspan="5">
                             <button type="button" id="orderBtn">주문하기</button>
