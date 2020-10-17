@@ -55,22 +55,71 @@ soldoutDelete.addEventListener("click",function(){
 });
 
 
-// minus,plus 버튼 활성화
+// minus,plus 버튼 활성화 & 수량 변동
 
 let minusBtn = document.querySelectorAll(".minusBtn");
 let plusBtn = document.querySelectorAll(".plusBtn");
 
-
-// 각 상품 금액 총 합계 추출
-
+let product_cnt = document.querySelectorAll(".product_cnt");
 let product_price = document.querySelectorAll(".product_price");
-let totalPrice = document.querySelectorAll(".totalPrice");
-let sum = 0;
+let basePrice = document.querySelectorAll(".basePrice");
 
-for (let i = 0; i<product_price.length; i++) {
-  sum += parseInt(product_price[i].value);
+let totalPrice = document.querySelectorAll(".totalPrice");
+
+// minus
+
+for (let i=0; i<minusBtn.length; i++) {
+  minusBtn[i].addEventListener("click",function(){
+    
+  let sum = parseInt(product_price[i].value);
+    
+    if (product_cnt[i].value > 1) { // 수량 감소
+      product_cnt[i].value--; 
+      sum -= parseInt(basePrice[i].innerText); // 수량에 따른 금액 감소
+      product_price[i].value = sum;
+    } else {
+      alert("최소수량은 1개입니다.");
+      product_cnt[i].value = 1;
+    } 
+
+    product_total_price();
+
+  });
 }
 
-for (let j=0; j<totalPrice.length; j++) {
-  totalPrice[j].value = sum;
+// plus
+
+for (let i=0; i<plusBtn.length; i++) {
+  plusBtn[i].addEventListener("click", function() {
+  
+  let sum = parseInt(product_price[i].value);
+  
+    if (product_cnt[i].value < 10) { // 수량증가
+      product_cnt[i].value++; 
+      sum += parseInt(basePrice[i].innerText); // 수량에 따른 금액 증가
+      product_price[i].value = sum;
+    } else {
+      alert("최대수량은 10개입니다.\n10개 이상은 가까운 매장으로 전화주문 부탁드립니다.");
+      product_cnt[i].value = 10;
+    }
+
+    product_total_price();
+
+  });   
+};
+
+
+ // 각 상품 금액 총 합계 추출
+
+function product_total_price() {
+  let totalSum = 0;
+
+  for (let i=0; i<product_price.length; i++) {
+    totalSum += parseInt(product_price[i].value);
+  }
+  
+  for (let i=0; i<totalPrice.length; i++) {
+    totalPrice[0].value = totalSum;
+    totalPrice[1].value = totalSum + 2500;
+  }
 }
