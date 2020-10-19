@@ -15,6 +15,7 @@ allCheck.addEventListener("click",function() {
   product_02.checked = allChkVal;
 });
 
+
 // 개별선택 활성화
 function allCheckFalse() {
     if (product_01.checked && product_02.checked) {
@@ -23,6 +24,7 @@ function allCheckFalse() {
         allCheck.checked = false;
       }
 }
+
 
 // 선택삭제 활성화 (+jQuery)
 let delBtn = document.querySelector("#chkDelete");
@@ -100,13 +102,11 @@ for (let i=0; i<plusBtn.length; i++) {
   });   
 };
 
-
  // 각 상품 금액 총 합계 추출
 
-let addPrice = document.querySelector(".addPrice").value;
-addPrice = parseInt(addPrice);
-
 function product_total_price() {
+  let addPrice = document.querySelector(".addPrice").value;
+  addPrice = parseInt(addPrice);
   let totalSum = 0;
 
   for (let i=0; i<product_price.length; i++) {
@@ -114,8 +114,9 @@ function product_total_price() {
   }
   
   for (let i=0; i<totalPrice.length; i++) {
-    totalPrice[0].value = totalSum;
-    totalPrice[1].value = totalSum + addPrice;
+    let totalSumAdd = totalSum + addPrice;
+    totalPrice[0].value = totalSum.toLocaleString();
+    totalPrice[1].value = totalSumAdd.toLocaleString();
   }
 }
 
