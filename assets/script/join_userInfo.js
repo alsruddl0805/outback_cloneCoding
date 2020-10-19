@@ -106,10 +106,10 @@ mobileCardUpdate.addEventListener("click",function(){
     }
 });
 
+
 // 유효성 검사
 
 // ID 중복확인
-
 let uID = document.querySelector("#uID");
 let uIDChkBtn = document.querySelector("#IdChk");
 let idConfirm = false;
@@ -125,7 +125,6 @@ uIDChkBtn.addEventListener("click",function(){
 });
 
 // email 중복확인
-
 let emailID = document.querySelector("#emailID");
 let emailAddress = document.querySelector("#emailAddress");
 let uEmailChkBtn = document.querySelector("#emailChk");
@@ -169,21 +168,29 @@ joinBtn.addEventListener("click",function(){
   let IDExp = /[^a-z|A-Z|0-9|]/;
   let IDExpRes = IDExp.test(uID.value);
 
-  let PWExp = /[^a-z|A-Z|0-9|!”#$%’()*+,-./:;<=>?@_`{}~]/;
-  let PWExpRes = PWExp.test(uPW.value);
+  let checkNumber = uPW.value.search(/[0-9]/g);
+  let checkEnglish = uPW.value.search(/[A-Z|a-z]/ig);
+  let checkSpecial = uPW.value.search(/[~!@#$%^&*()_+|<>?:{}]/ig);
 
   let NumberExp = /[^0-9]/;
   let NumberExpRes_01 = NumberExp.test(uNum_01.value);
   let NumberExpRes_02 = NumberExp.test(uNum_02.value);
   let NumberExpRes_03 = NumberExp.test(uNum_03.value);
 
+  let EmailIDExp = /[^a-z|A-Z|0-9|]/;
+  let EmailAddressExp = /[^a-z|A-Z|.]/;
+
+  // 이름
   if (uName.value.trim() == "") {
     alert("이름을 입력해주세요.");
     uName.focus();
   } else if (NameExpRes) {
     alert("이름은 한글만 입력 가능합니다."); 
-    uName.select(); // 이름 끝
-  } else if (uID.value.trim() == "") {
+    uName.select();
+  } 
+  
+  // 아이디
+  else if (uID.value.trim() == "") {
     alert("아이디를 입력해주세요.");
     uID.focus();
   } else if (IDExpRes) {
@@ -191,12 +198,15 @@ joinBtn.addEventListener("click",function(){
     uID.select();
   } else if (idConfirm == false) {
     alert("아이디 중복검사를 실행해주세요.");
-    uIDChkBtn.focus(); // 아이디 끝
-  }else if (uPW.value.trim() == "") {
+    uIDChkBtn.focus();
+  }
+  
+  // 패스워드
+  else if (uPW.value.trim() == "") {
     alert("패스워드를 입력해주세요.");
     uPW.focus();
-  } else if (PWExpRes) {
-    alert("패스워드 형식이 올바르지 않습니다.");
+  } else if (checkNumber < 0 || checkEnglish < 0 || checkSpecial < 0) {
+    alert("영문 대소문자, 숫자, 특수문자 3가지를 조합하여 설정해주세요.");
     uPW.select();
   } else if (uPW.value.length < 8 || uPW.value.length > 16) {
     alert("8~16자 이내로 조합하여 설정해주세요.");
@@ -212,8 +222,11 @@ joinBtn.addEventListener("click",function(){
     uPWRe.focus();
   } else if (uPW.value.trim() != uPWRe.value.trim()) {
     alert("패스워드가 일치하지 않습니다.");
-    uPWRe.select(); // 비밀번호 끝
-  } else if (uNum_01.value.trim() == "" || uNum_02.value.trim() == "" || uNum_03.value.trim() == "") {
+    uPWRe.select();
+  } 
+  
+  // 휴대폰번호
+  else if (uNum_01.value.trim() == "" || uNum_02.value.trim() == "" || uNum_03.value.trim() == "") {
     alert("휴대폰번호를 입력해주세요.");
     uNum_01.focus();
   } else if (NumberExpRes_01 || NumberExpRes_02 || NumberExpRes_03) {
@@ -221,17 +234,29 @@ joinBtn.addEventListener("click",function(){
     uNum_01.focus();
   } else if (uNum_01.value.length < 3 || uNum_02.value.length < 4 || uNum_03.value.length < 4) {
     alert("휴대폰번호를 정확하게 입력해주세요.");
-    uNum_01.focus(); // 휴대폰번호 끝
-  } else if (emailID.value.trim() == "") {
+    uNum_01.focus();
+  }
+  
+  // 이메일
+  else if (emailID.value.trim() == "") {
     alert("이메일을 입력해주세요.");
+    emailID.focus();
+  } else if (EmailIDExp.test(emailID.value)) {
+    alert("아이디는 영문 대소문자,숫자로 입력 가능합니다.");
     emailID.focus();
   } else if (emailAddress.value.trim() == "") {
     alert("이메일 주소를 선택해주세요.");
     emailAddress.focus();
+  } else if (EmailAddressExp.test(emailAddress.value)) {
+    alert("이메일 주소의 형식이 올바르지 않습니다.");
+    emailAddress.focus();
   } else if (emailConfirm == false) {
     alert("이메일 중복검사를 실행해주세요.");
-    uEmailChkBtn.focus(); // 이메일 끝
-  } else if (pointPW.value.trim() == "") {
+    uEmailChkBtn.focus();
+  } 
+  
+  // 포인트 비밀번호
+  else if (pointPW.value.trim() == "") {
     alert("포인트 비밀번호를 입력해주세요.");
     pointPW.focus();
   } else if (pointPW.value.length < 6 || pointPW.value.length > 6) {
@@ -242,11 +267,13 @@ joinBtn.addEventListener("click",function(){
     pointPWRe.focus();
   } else if (pointPW.value.trim() != pointPWRe.value.trim()) {
     alert("포인트 비밀번호가 일치하지 않습니다.");
-    pointPWRe.select(); // 포인트비밀번호 끝
-  } else {
+    pointPWRe.select();
+  } 
+  
+  // submit
+  else {
     alert("회원가입이 완료되었습니다.");
     document.querySelector("form").action = "../index.html";
     document.querySelector("form").submit();
   }
-  
 });

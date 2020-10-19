@@ -260,12 +260,16 @@ select.uBirth {
     width: 415px;
 }
 
-tr:nth-child(12) td:nth-child(2) {
+tr:nth-child(11) td {
     padding-top: 10px;
 }
 
 span.agreeText {
-    margin: 0 30px;
+    margin: 30px;
+}
+
+tr:nth-child(12) td:nth-child(2) {
+    padding-top: 10px;
 }
 
 /*체크박스 사라지게 하기*/
