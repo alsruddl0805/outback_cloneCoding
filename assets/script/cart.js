@@ -1,7 +1,6 @@
 // cart 보완
 // 1. 선택삭제 alert 뜨는 if 조건문 검사
-// 2. minus,plus 버튼 활성화
-// 3. 주문하기 버튼 활성화
+// 2. checked 되어야결제 예상금액 확인 가능
 
 // 전체선택 활성화
 let allCheck = document.querySelector("#allCheck");
@@ -48,12 +47,6 @@ delBtn.addEventListener("click",function(){
   }
 });
 
-// 품절상품 삭제 버튼 활성화
-let soldoutDelete = document.querySelector("#soldoutDelete");
-soldoutDelete.addEventListener("click",function(){
-  alert("품절된 상품이 존재하지 않습니다.");
-});
-
 
 // minus,plus 버튼 활성화 & 수량 변동
 
@@ -83,7 +76,6 @@ for (let i=0; i<minusBtn.length; i++) {
     } 
 
     product_total_price();
-
   });
 }
 
@@ -111,6 +103,9 @@ for (let i=0; i<plusBtn.length; i++) {
 
  // 각 상품 금액 총 합계 추출
 
+let addPrice = document.querySelector(".addPrice").value;
+addPrice = parseInt(addPrice);
+
 function product_total_price() {
   let totalSum = 0;
 
@@ -120,6 +115,18 @@ function product_total_price() {
   
   for (let i=0; i<totalPrice.length; i++) {
     totalPrice[0].value = totalSum;
-    totalPrice[1].value = totalSum + 2500;
+    totalPrice[1].value = totalSum + addPrice;
   }
 }
+
+product_total_price();
+
+
+// 주문하기 버튼 활성화
+
+let orderBtn = document.querySelector("#orderBtn");
+orderBtn.addEventListener("click",function(){
+    if (confirm("전체 상품을 주문하시겠습니까?")) {
+      alert("주문이 완료 되었습니다.");
+    }
+});
