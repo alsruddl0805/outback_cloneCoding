@@ -108,8 +108,22 @@ main {
     display: inline-block;
 }
 
+#cartArea #deleteArea td,
 #cartArea table tr:last-child td {
     border-bottom: none;
+}
+
+#cartArea #deleteArea td {
+    text-align: left;
+    padding-left: 30px;
+}
+
+#chkDelete {
+    height: 40px;
+    color: #cb0000;
+    border: 1px solid #cb0000;
+    background-color: #fff;
+    padding: 0 20px;
 }
 
 button {

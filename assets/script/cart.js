@@ -16,15 +16,6 @@ for (let i=0; i<product_chk.length; i++) {
     product_chk[i].checked = allChkVal;
   });
 
-  // 전체선택 해제 시 금액 초기화
-  allCheck.addEventListener("change",function(){
-  if (allCheck.checked == true) {
-    product_total_price();
-  } else {
-    totalPrice[i].value = 0; 
-  }
-});
-
 // 개별선택 동의 활성화
 product_chk[i].addEventListener("click",function() {
   if (product_chk[0].checked && product_chk[1].checked) {
@@ -37,7 +28,31 @@ product_chk[i].checked = true;
 
 }
 
-// 2. minus,plus 버튼 활성화 & 수량 변동
+// 2. 선택 삭제 활성화
+
+delBtn.addEventListener("click",function(){
+  if (confirm("선택하신 상품을 삭제하시겠습니까?")) {
+
+    for (let i=0; i<totalPrice.length; i++) {
+      if (product_chk[0].checked == false && product_chk[1].checked == false) {
+        alert("선택된 상품이 없습니다.");
+        return;
+      } else if (allCheck.checked) { // 전체선택일때 2개 다 삭제
+          $("#cartTable tr:nth-child(2) td").remove();
+          $("#cartTable tr:nth-child(3) td").remove();
+          // allCheck.checked = false;
+          totalPrice[i].value = 0;
+      } else if (product_chk[0].checked) { // line 1 선택시 해당 라인 삭제
+          $("#cartTable tr:nth-child(2) td").remove();
+      } else if (product_chk[1].checked) { // line 2 선택시 해당 라인 삭제
+          $("#cartTable tr:nth-child(3) td").remove();
+      }
+    }
+
+  }
+});
+
+// 3. minus,plus 버튼 활성화 & 수량 변동
 
 let minusBtn = document.querySelectorAll(".minusBtn");
 let plusBtn = document.querySelectorAll(".plusBtn");
@@ -64,6 +79,14 @@ function minus_cnt() {
     product_cnt[i].value = 1;
   } 
 
+    // 체크 해제 시 minus 버튼 누르면 자동 체크
+    if (product_chk[i].checked == false) {
+      if (minus_cnt) {
+        product_chk[i].checked = true;
+        allCheck.checked = true;
+      }
+    }
+
   product_total_price();
 }
 
@@ -85,12 +108,21 @@ function plus_cnt() {
     alert("최대수량은 10개입니다.\n10개 이상은 가까운 매장으로 전화주문 부탁드립니다.");
     product_cnt[i].value = 10;
   }
+
+  // 체크 해제 시 plus 버튼 누르면 자동 체크
+  if (product_chk[i].checked == false) {
+    if (plus_cnt) {
+      product_chk[i].checked = true;
+      allCheck.checked = true;
+    }
+  }
+  
   product_total_price();
 }
 
 }
 
- // 3. 각 상품 금액 총 합계 추출
+ // 4. 각 상품 금액 총 합계 추출
 
 function product_total_price() {
   let addPrice = document.querySelector(".addPrice").value;
@@ -110,7 +142,7 @@ function product_total_price() {
 
 product_total_price();
 
-// 4. 체크박스 해제 시 금액 변동
+// 5. 체크박스 해제 시 금액 변동
 
 function priceChk() {
   for (let i=0; i<product_chk.length; i++) {
@@ -118,10 +150,10 @@ function priceChk() {
 
     let addPrice = document.querySelector(".addPrice").value;
     addPrice = parseInt(addPrice);
-  
+    totalPrice[0].value = 0;
+    totalPrice[1].value = 0;
+
     if (product_chk[0].checked == false && product_chk[1].checked == false) {
-      totalPrice[0].value = 0;
-      totalPrice[1].value = 0;
       return;
     } else if (product_chk[0].checked == false) {
       totalPrice[0].value = product_price[1].value;
@@ -140,7 +172,7 @@ function priceChk() {
 
 priceChk();
 
-// 5. 주문하기 버튼 활성화
+// 6. 주문하기 버튼 활성화
 
 let orderBtn = document.querySelector("#orderBtn");
 orderBtn.addEventListener("click",function(){

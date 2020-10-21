@@ -44,11 +44,6 @@ function modal_Close() {
     modalPopup.style.display = "none";
 }
 
-// delivery
-
-let delivery = document.querySelector("#addMenu ul li:last-child a");
-delivery.href = "../pager/cart.html";
-
 // sns 주소 연동
 
 let instagram = document.querySelector("#snsIcon a:first-child");
