@@ -92,14 +92,14 @@ main {
     width: 80px;
     outline: none;
     border: none;
-    font-size: 14px;
+    font-size: 15px;
     text-align: center;
 }
 
 #cartArea #priceArea td {
     height: 50px;
     text-align: right;
-    font-size: 14px;
+    font-size: 15px;
     padding-right: 75px;
     border-bottom: 1px solid #aaa;
 }
