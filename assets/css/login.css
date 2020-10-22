@@ -132,7 +132,6 @@ main {
 
 #loginArea #loginBox {
     width: 860px;
-    height: 160px;
     padding: 40px;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -269,14 +268,29 @@ main {
     color: #bbb;
 }
 
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
 #joinBtn {
     width: 460px;
     height: 55px;
-    outline: none;
-    border: none;
     background-color: #000;
     color: #fff;
     font-size: 20px;
     margin: 20px 0;
-    cursor: pointer;
+}
+
+#moveManager {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 40px;
+    background-color: #000;
 }

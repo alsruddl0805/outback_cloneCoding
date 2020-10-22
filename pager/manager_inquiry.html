@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 | 회원정보 | 아웃백 (권민경)</title>
+    <title>관리자 페이지 | 게시판 관리</title>
     <link rel="stylesheet" href="../assets/css/common.css">
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/manager_inquiry.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../assets/script/jquery-3.5.1.min.js"></script>
     <script defer src="../assets/script/common.js"></script>
-    <script defer src="../assets/script/login.js"></script>
+    <script defer src="../assets/script/manager_inquiry.js"></script>
 </head>
 <body>
-
+    
     <div id="wrap">
 
         <header>
@@ -88,92 +88,151 @@
 
         <main>
 
-            <nav id="menuList">
+            <p>문의내역 관리 페이지</p>
+            <p>문의 내역의 게시물을 관리하는 페이지 입니다.</p>
+            
+            <section id="manageArea">
 
-                <ul id="mainBar">
-                    <li><a href="../index.html"><i class="fas fa-home"></i></a></li>
-                    <li>
-                        <a href="#">
-                        회원<i class="fas fa-caret-down"></i>
-                        </a>
-                            <ul class="subBar">
-                                <li><a href="#">BRAND</a></li>
-                                <li><a href="#">MENU</a></li>
-                                <li><a href="#">MEMBERSHIP</a></li>
-                                <li><a href="#">BENEFIT</a></li>
-                                <li><a href="store.html">STORE</a></li>
-                                <li><a href="inquiry_main.html">고객의 소리</a></li>
-                                <li><a href="login.html" class="active">회원</a></li>
-                                <li><a href="#">채용</a></li>
-                                <li><a href="#">마이아웃백</a></li>
-                                <li><a href="#">ETC</a></li>
-                                <li><a href="#">사이트맵</a></li>
+                <table>
+                    <tr>
+                        <th>작성일</th>
+                        <td>
+                            <ul id="searchDay">
+                                <li>오늘</li>
+                                <li>7일</li>
+                                <li>1개월</li>
+                                <li>3개월</li>
                             </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                        로그인<i class="fas fa-caret-down"></i>
-                        </a>
-                        <ul class="subBar">
-                            <li><a href="login.html" class="active">로그인</a></li>
-                            <li><a href="#">아이디 찾기</a></li>
-                            <li><a href="#">패스워드 찾기</a></li>
-                            <li><a href="join_agree.html">회원가입</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        Home &gt;
-                        회원 &gt;
-                        <span>로그인</span>
-                    </li>
-                </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>게시판 선택</th>
+                        <td>
+                            <select id="inquiryType"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>게시글 찾기</th>
+                        <td>
+                            <select id="searchList"></select>
+                            <input type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>답변상태</th>
+                        <td>
+                            <fieldset>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="answerType" value = "all"> 전체보기
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="answerType" value = "3"> 답변 전
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="answerType" value = "2"> 처리중
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="answerType" value = "1"> 답변 완료
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>댓글여부</th>
+                        <td>
+                            <fieldset>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="answerConfirm" value = "all"> 전체보기
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="answerConfirm" value = "yes"> 있음
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="answerConfirm" value = "no"> 없음
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>첨부파일여부</th>
+                        <td>
+                            <fieldset>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="file" value = "all"> 전체보기
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="file" value = "yes"> 있음
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                                <label class= "radioContainer">
+                                    <input type="radio" name="file" value = "no"> 없음
+                                    <span class="radioboxCheckmark"></span>
+                                </label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </table>
 
-            </nav>
+                <button type="button">검색</button>
 
-            <div id="loginArea">
+            </section>
 
-                <p>아웃백 로그인</p>
-                <p>로그인을 하시면 아웃백의 다양한 서비스를 이용하실 수 있습니다.</p>
 
-                <form>
-                <div id="loginBox">
+            <section id="listArea">
 
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="text" id="uID" placeholder="아이디 입력" autofocus>
-                            </td>
-                            <td rowspan="2">
-                                <button type="button" id="loginBtn">로그인</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="password" id="uPW" placeholder="패스워드 입력">
-                            </td>
-                        </tr>
-                    </table>
+                <nav id="tableTop">
+                    <p>
+                        전체 문의내역 목록
+                        <span>총 문의 게시물은<span id="inquiryNum"> 1 </span>건 입니다.</span>
+                    </p>
 
                     <ul>
-                        <li>
+                        <li>삭제</li>
+                        <li>공지 등록</li>
+                        <li>공지 해제</li>
+                        <li>글 고정 지정</li>
+                        <li>글 고정 해제</li>
+                    </ul>
+                </nav>
+                
+                <table>
+                    <tr>
+                        <th>
                             <label class="chkbox chkboxContainer" checked= "checked">
                                 <input type="checkbox">
-                                <span id="ID_cookie">아이디 저장</span>
                                 <span class="chkboxCheckmark"></span>
                             </label>
-                        </li>
-                        <li> <a href="#">아이디찾기</a> <span>|</span> <a href="#">패스워드 찾기</a></li>
-                    </ul>
+                        </th>
+                        <th>번호</th>
+                        <th>문의 유형</th>
+                        <th>제목</th>
+                        <th>작성일</th>
+                        <th>답변 여부</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="chkbox chkboxContainer" checked= "checked">
+                                <input type="checkbox">
+                                <span class="chkboxCheckmark"></span>
+                            </label>
+                        </td>
+                        <td class="listNum"></td>
+                        <td>매장 서비스</td>
+                        <td>해운대점 직원이 친절했어요</td>
+                        <td>2020.10.13</td>
+                        <td>답변 완료</td>
+                    </tr>
+                </table>
 
-                    <button type="button" id="moveManager">관리자 페이지 이동 <i class="fas fa-chevron-right"></i></button>
-
-                </div>
-                </form>
-
-                <p>아직 아웃백 계정이 없으신가요?</p>
-                <a href="join_agree.html"><button type="button" id="joinBtn">회원가입</button></a>
-
-            </div>
+            </section>
 
         </main>
 

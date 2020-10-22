@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+main {
+    padding: 80px 0;
+    position: relative;
+    top:100px;
+}
+
+main>p {
+    text-align: center;
+}
+
+main>p:first-child {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+main>p:nth-child(2) {
+    color: #666;
+}
+
+#managerSelect {
+    width: 1180px;
+    padding: 80px 0;
+    display: flex;
+}
+
+#member, #inquiry {
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    border: 1px solid #dedede;
+    cursor: pointer;
+}
+
+#member:hover, #inquiry:hover {
+    border: 1px solid #cb0000;
+}
+
+section p {
+    font-size: 25px;
+    padding: 50px 0 15px 0;
+    color: #666;
+}
+
+section p>i {
+    font-size: 25px;
+    color: #666;
+    padding-left: 10px;
+}
+
+section i {
+    font-size: 45px;
+    color: #666;
+}
+
+section:hover p,
+section:hover p>i,
+section:hover i {
+    color: #cb0000;
+}

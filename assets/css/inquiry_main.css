@@ -170,13 +170,8 @@ main>p:first-child>span {
     font-size: 15px;
     color: #666;
     margin-top: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #dedede;
-}
-
-#loginBox p:nth-child(5) {
-    font-size: 14px;
-    color: #666;
+    padding-top: 30px;
+    border-top: 1px solid #dedede;
 }
 
 #uID, #uPW {
@@ -212,16 +207,4 @@ button {
     background-color: #cb0000;
     color: #fff;
     margin-left: 10px;
-}
-
-#moveManager {
-    width: 150px;
-    height: 30px;
-    line-height: 30px;
-    color: #fff;
-    text-align: center;
-    display: inline-block;
-    font-size: 13px;
-    margin: 30px;
-    background-color: #000;
 }
