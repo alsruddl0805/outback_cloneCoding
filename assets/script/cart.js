@@ -148,8 +148,7 @@ function priceChk() {
   for (let i=0; i<product_chk.length; i++) {
     product_chk[i].addEventListener("change",function(){
 
-    let addPrice = document.querySelector(".addPrice").value;
-    addPrice = parseInt(addPrice);
+    let addPrice = 2500;
     totalPrice[0].value = 0;
     totalPrice[1].value = 0;
 
@@ -184,3 +183,43 @@ orderBtn.addEventListener("click",function(){
       }
     }
 });
+
+
+// 7. 숫자에 콤마 넣기
+
+for (let i=0; i<product_price.length; i++) {
+  basePrice_Comma = basePrice[i].innerText;
+  basePrice[i].innerText = sepComma(basePrice_Comma);
+  
+  product_price_Comma = product_price[i].value;
+  product_price[i].value = sepComma(product_price_Comma);
+
+  totalPrice_Comma = totalPrice[i].value;
+  totalPrice[i].value = sepComma(totalPrice_Comma);
+}
+
+// 콤마 삽입
+
+function sepComma(inputMoney) {
+  let pattern = /\B(?=(\d{3})+(?!\d))/g;
+  let res = inputMoney.replace(pattern, ",");
+  return res;
+}
+
+// 콤마 제거 
+
+function removeComma(restore) {
+  if (restore.search(',')) {
+      arrComma = restore.split(',');
+      for (i = 0; ; i++) {
+          if (!arrComma[i]) break;
+
+          if (i == 0) {
+              restore = arrComma[i];
+          } else {
+              restore = restore + arrComma[i];
+          }
+      }
+  }
+  return restore;
+}
