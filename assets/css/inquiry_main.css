@@ -165,13 +165,18 @@ main>p:first-child>span {
     font-weight: normal;
 }
 
-#loginBox p:last-child {
+#loginBox p:nth-child(3) {
     width: 500px;
-    border-top: 1px solid #dedede;
     font-size: 15px;
     color: #666;
-    padding: 50px 0 30px;
     margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dedede;
+}
+
+#loginBox p:nth-child(5) {
+    font-size: 14px;
+    color: #666;
 }
 
 #uID, #uPW {
@@ -194,14 +199,29 @@ main>p:first-child>span {
     color: #aaa;
 }
 
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
 #loginBtn {
     width: 104px;
     height: 104px;
     font-size: 20px;
-    border: none;
     background-color: #cb0000;
     color: #fff;
     margin-left: 10px;
-    outline: none;
-    cursor: pointer;
+}
+
+#moveManager {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    margin: 30px;
+    background-color: #000;
 }

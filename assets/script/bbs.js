@@ -15,9 +15,7 @@ for (let i=0; i<pageBtn.length; i++) {
     pageBtn[0].classList.remove("pager");
     this.classList.add("pager");
   });
-}
 
-for (let i=0; i<pageBtn.length; i++) {
   pageBtn[i].addEventListener("focusout",function(){
     this.classList.remove("pager");
   });
