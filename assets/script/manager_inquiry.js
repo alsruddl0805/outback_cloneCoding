@@ -39,3 +39,10 @@ for (let i = 0; i<listNum.length; i++) {
 $("#searchDay li").click(function(){
     $(this).toggleClass("on");
 });
+
+// 유효성 검사
+
+let searchBtn = document.querySelector("#searchBtn");
+searchBtn.addEventListener("click",function(){
+    alert("검색을 완료하였습니다.");
+});
