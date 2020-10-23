@@ -7,6 +7,7 @@ main {
 }
 
 main>p {
+    width: 1180px;
     text-align: center;
 }
 

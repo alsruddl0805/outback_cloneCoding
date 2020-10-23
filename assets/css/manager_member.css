@@ -55,13 +55,12 @@ section {
     border-bottom: 1px solid #dedede;
 }
 
-#manageArea table tr:nth-child(4) td,
 #manageArea table tr:nth-child(5) td,
 #manageArea table tr:nth-child(6) td {
     padding: 10px 0 0 10px;
 }
 
-#manageArea button {
+#manageArea #searchBtn {
     width: 100px;
     height: 40px;
     margin: 30px;
@@ -73,44 +72,15 @@ section {
     cursor: pointer;
 }
 
-#manageArea #searchDay li {
-    width: 50px;
-    height: 20px;
-    text-align: center;
-    float: left;
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #888;
-    border-right: none;
-    cursor: pointer;
-}
-
-#manageArea #searchDay li:last-child {
-    border-right: 1px solid #888;
-}
-
-.on {
-    background-color: #cb0000;
-    color: #fff;
-}
-
 select {
+    width: 100px;
     height: 35px;
     border: 1px solid #888;
     outline: none;
     font-size: 13px;
 }
 
-#inquiryType {
-    width: 225px;
-}
-
-#searchList {
-    width: 100px;
-}
-
-#manageArea tr:nth-child(3) input {
-    width: 400px;
+#manageArea tr td input {
     height: 31px;
     margin-top: 4px;
     padding-left: 10px;
@@ -120,8 +90,22 @@ select {
     top: -1px;
 }
 
+#manageArea tr:nth-child(3) td input {
+    width: 100px;
+}
+
+#manageArea tr:nth-child(4) td input {
+    width: 120px;
+}
+
 #manageArea fieldset {
     border: none;
+}
+
+#manageArea tr:nth-child(5) td input,
+#manageArea tr:nth-child(6) td input {
+    width: 0;
+    height: 0;
 }
 
 /*manageArea 종료*/
@@ -192,28 +176,8 @@ select {
     border-bottom: 1px solid #dedede;
 }
 
-#listArea table tr:nth-child(2) td:nth-child(3),
-#listArea table tr:nth-child(2) td:nth-child(5),
-#listArea table tr:nth-child(2) td:last-child {
-    font-size: 13px;
-}
-
-#listArea table tr:nth-child(2) td:first-child,
-#listArea table tr:nth-child(2) td:nth-child(3),
-#listArea table tr:nth-child(2) td:nth-child(5) {
-    color: #888;
-}
-
-#listArea table tr:nth-child(2) td:nth-child(4) {
-    text-align: left;
-}
-
-#listArea table tr:nth-child(2) td:nth-child(4):hover {
-    text-decoration: underline;   
-}
-
-#listArea table tr:nth-child(2) td:last-child {
-    color: #cb0000;
+#listArea table tr:nth-child(2) td:nth-child(2) {
+    width: 120px;
 }
 
 /*listArea 종료*/
@@ -236,7 +200,7 @@ label {
 
 .chkboxCheckmark {
     position: absolute;
-    top: -8px;
+    top: 0;
     left: 0;
     width: 20px;
     height: 20px;

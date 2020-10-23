@@ -13,7 +13,7 @@ select_inquiry.innerHTML = addinquiryOption;
 
 // 게시글 찾기 option 추가
 
-let searchList = ["문의 유형","제목","작성일"];
+let searchList = ["제목","작성일"];
 let addinquiryList = "";
 
 for (let i = 0; i<searchList.length; i++) {
@@ -34,7 +34,7 @@ for (let i = 0; i<listNum.length; i++) {
   listNum[i].innerText = numTxt;
 }
 
-// searchDay hover style
+// // searchDay hover style
 
 $("#searchDay li").click(function(){
     $(this).toggleClass("on");
