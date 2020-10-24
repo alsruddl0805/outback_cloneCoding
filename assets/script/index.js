@@ -3,47 +3,22 @@
 // 2. 슬라이드 controls 활성화
 
 // slide
+var slider = tns({
+    "container": ".slides",
+    "items": 1,
+    "rewind": true,
+    "autoplay": true,
+    "autoplayTimeout": 3000,
+    "swipeAngle": false,
+    "speed": 400
+});
 
-function slide() {
-    $("#slideFrame").animate({"margin-left":"-1920px"},1000,
-        function(){
-            $(this).css({"margin-left":"0"});
-            $("#slideFrame>a:first").insertAfter("#slideFrame>a:last");
-        }
-    );
-}
+// slide prev,next Btn
 
-setInterval(slide,3000);
+let prevBtn = document.querySelector(".tns-controls button:first-child");
+prevBtn.innerHTML = "";
+prevBtn.innerHTML = "<img src='assets/images/boomerang_left.png' alt='leftBoomerang'>";
 
-
-// arrow hover
-
-let leftArrow = document.querySelector("#leftArrow");
-let leftRed = document.querySelector("#leftRed");
-leftArrow.addEventListener("mouseover",left_Change);
-leftArrow.addEventListener("mouseout",left_Origin);
-
-function left_Change() {
-    leftArrow.style.display = "none";
-    leftRed.style.display = "block";
-}
-
-function left_Origin() {
-    leftArrow.style.display = "block";
-    leftRed.style.display = "none";
-}
-
-let rightArrow = document.querySelector("#rightArrow");
-let rightRed = document.querySelector("#rightRed");
-rightArrow.addEventListener("mouseover",right_Change);
-rightArrow.addEventListener("mouseout",right_Origin);
-
-function right_Change() {
-    rightArrow.style.display = "none";
-    rightRed.style.display = "block";
-}
-
-function right_Origin() {
-    rightArrow.style.display = "block";
-    rightRed.style.display = "none";
-}
+let nextBtn = document.querySelector(".tns-controls button:last-child");
+nextBtn.innerHTML = "";
+nextBtn.innerHTML = "<img src='assets/images/boomerang_right.png' alt='rightBoomerang'>";

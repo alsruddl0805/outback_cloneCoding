@@ -6,6 +6,8 @@
     <title>메인 | 아웃백 (권민경)</title>
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="assets/script/jquery-3.5.1.min.js"></script>
     <script defer src="assets/script/index.js"></script>
@@ -88,32 +90,16 @@
 
         <main>
 
-            <div id="slide">
-                <div id="slideFrame">
+            <div id="slideshow">
 
-                    <a href="#"><img src="assets/images/slide_01.jpg" alt="티본 스테이크"></a>
-                    <a href="#"><img src="assets/images/slide_02.jpg" alt="토마호크 스테이크"></a>
-                    <a href="#"><img src="assets/images/slide_03.jpg" alt="블랙라벨"></a>
-                    <a href="#"><img src="assets/images/slide_04.jpg" alt="딜리버리 서비스"></a>
-
+                <div class="slides fade">
+                    <img src="assets/images/slide_01.jpg" alt="티본 스테이크">
+                    <img src="assets/images/slide_02.jpg" alt="토마호크 스테이크">
+                    <img src="assets/images/slide_03.jpg" alt="블랙라벨">
+                    <img src="assets/images/slide_04.jpg" alt="딜리버리 서비스">
                 </div>
-            </div> <!--div#slide-->
-
-            <div id="arrowArea">
-                <img src="assets/images/boomerang_left.png" alt="왼쪽부메랑" id="leftArrow">
-                <img src="assets/images/boomerang_left_red.png" alt="왼쪽부메랑_hover" id="leftRed">
-                <img src="assets/images/boomerang_right.png" alt="오른쪽부메랑" id="rightArrow">
-                <img src="assets/images/boomerang_right_red.png" alt="오른쪽부메랑_hover" id="rightRed">
-            </div>
-
-            <nav id="slideControl">
-                <ul>
-                    <li><p></p></li>
-                    <li><p></p></li>
-                    <li><p></p></li>
-                    <li><p></p></li>
-                </ul>
-            </nav>
+                
+            </div> 
 
             <div id="videoArea">
                 <iframe width="676" height="380" src="https://www.youtube.com/embed/7dVwlbHvV0Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
