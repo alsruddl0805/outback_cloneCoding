@@ -6,10 +6,10 @@
     <title>고객의 소리 & 문의 | 고객센터 | 아웃백 (권민경)</title>
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/inquiry_update.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../assets/script/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script defer src="../assets/script/common.js"></script>
     <script defer src="../assets/script/inquiry_update.js"></script>
 </head>
@@ -183,8 +183,7 @@
                     <tr>
                         <td>방문 일자</td>
                         <td>
-                            <input type="text" id="visitDate" readonly>
-                            <img src="../assets/images/btn_datepicker.png" alt="달력" id="calendar">
+                            <input type="text" class="datepicker" readonly>
                         </td>
                     </tr>
                     <tr>

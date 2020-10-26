@@ -239,9 +239,13 @@ table tr td select {
     width: 334px;
 }
 
-#visitDate {
+.datepicker {
     width: 194px;
     font-size: 13px;
+}
+
+img.ui-datepicker-trigger {
+    padding: 0 0 3px 8px;
 }
 
 tr:nth-child(6) td:nth-child(2) img {
