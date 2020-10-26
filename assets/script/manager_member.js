@@ -1,3 +1,27 @@
+// 체크박스 구현
+
+let allCheck = document.querySelector("#allCheck");
+let memberCheck = document.querySelectorAll(".memberCheck");
+
+for (let i=0; i<memberCheck.length; i++) {
+
+  // 전체선택 활성화
+  allCheck.addEventListener("click",function() {
+    let allChkVal = allCheck.checked;    
+    memberCheck[i].checked = allChkVal;
+  }); 
+
+// 개별선택 활성화
+memberCheck[i].addEventListener("click",function() {
+  if (memberCheck[0].checked && memberCheck[1].checked && memberCheck[2].checked) {
+    allCheck.checked = true;
+  } else {
+    allCheck.checked = false;
+  }
+});
+
+}
+
 // email option 추가
 
 let email = ["직접입력","outback.co.kr","empal.com","naver.com","gmail.com","hanmail.net","hanmir.com","hitel.net",
@@ -23,47 +47,6 @@ document.querySelector("#emailAddress").value = emailVal;
     }
 });
 
-
-// birth select
-
-let Year= document.querySelector("#select_year"); 
-let Month= document.querySelector("#select_month");
-Year.addEventListener("change",lastday);
-Month.addEventListener("change",lastday);
-
-let start_year="1920";
-let today= new Date(); 
-let today_year= today.getFullYear(); 
-let index=0; 
-
-for (let y=start_year; y<=today_year; y++) {
-    document.querySelector("#select_year").options[index] = new Option(y, y); 
-    index++; 
-  } 
-
-index=0;
-
-for (let m=1; m<=12; m++) { 
-    document.querySelector("#select_month").options[index] = new Option(m, m); index++; 
-} 
-
-lastday();
-
-function lastday(){ //년과 월에 따라 마지막 일 구하기 
-    let yearVal= Year.value;
-    let monthVal= Month.value;
-    let day=new Date(new Date(yearVal,monthVal,1)-86400000).getDate(); 
-    let dayindex_len=document.querySelector("#select_day").length;
-    if (day>dayindex_len) {
-        for(let i=(dayindex_len+1); i<=day; i++){ 
-          document.querySelector("#select_day").options[i-1] = new Option(i, i); 
-        } 
-    } else if (day<dayindex_len) { 
-        for (let i=dayindex_len; i>=day; i--) { 
-          document.querySelector("#select_day").options[i]=null; 
-        }
-    } 
-}
 
 // 유효성 검사
 

@@ -191,6 +191,10 @@ select {
     padding-left: 10px;
 }
 
+#listArea table tr:first-child th:nth-child(3) {
+    width: 200px;
+}
+
 #listArea table tr td {
     height: 71px;
     text-align: center;
@@ -198,27 +202,18 @@ select {
     border-bottom: 1px solid #dedede;
 }
 
-#listArea table tr:nth-child(2) td:nth-child(3),
-#listArea table tr:nth-child(2) td:nth-child(5),
-#listArea table tr:nth-child(2) td:last-child {
+#listArea table tr td:first-child,
+#listArea table tr td:nth-child(3),
+#listArea table tr td:nth-child(5) {
+    color: #888;
     font-size: 13px;
 }
 
-#listArea table tr:nth-child(2) td:first-child,
-#listArea table tr:nth-child(2) td:nth-child(3),
-#listArea table tr:nth-child(2) td:nth-child(5) {
-    color: #888;
-}
-
-#listArea table tr:nth-child(2) td:nth-child(4) {
-    text-align: left;
-}
-
-#listArea table tr:nth-child(2) td:nth-child(4):hover {
+#listArea table tr td:nth-child(4):hover {
     text-decoration: underline;   
 }
 
-#listArea table tr:nth-child(2) td:last-child {
+#listArea table tr td:last-child {
     color: #cb0000;
 }
 
@@ -242,7 +237,7 @@ label {
 
 .chkboxCheckmark {
     position: absolute;
-    top: -8px;
+    top: 0px;
     left: 0;
     width: 20px;
     height: 20px;

@@ -212,7 +212,7 @@ inquiryBtn.addEventListener("click",function(){
     alert("개인정보수집이용에 동의를 해주세요.");
   } else if (confirm("고객의 소리를 등록하시겠습니까?")) {
     alert("등록에 성공하였습니다.");
-    document.querySelector("form").action = "inquiry_update.html";
+    document.querySelector("form").action = "myoutback.html";
     document.querySelector("form").submit(); 
   }
 

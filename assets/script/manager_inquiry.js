@@ -1,3 +1,27 @@
+// 체크박스 구현
+
+let allCheck = document.querySelector("#allCheck");
+let memberCheck = document.querySelectorAll(".memberCheck");
+
+for (let i=0; i<memberCheck.length; i++) {
+
+  // 전체선택 활성화
+  allCheck.addEventListener("click",function() {
+    let allChkVal = allCheck.checked;    
+    memberCheck[i].checked = allChkVal;
+  }); 
+
+// 개별선택 활성화
+memberCheck[i].addEventListener("click",function() {
+  if (memberCheck[0].checked && memberCheck[1].checked && memberCheck[2].checked) {
+    allCheck.checked = true;
+  } else {
+    allCheck.checked = false;
+  }
+});
+
+}
+
 // 게시판 선택 option 추가
 
 let inquiryType = ["매장서비스","딜리버리 서비스","부메랑 클럽","홈페이지 및 APP","이벤트","제휴 서비스","지류상품권",
@@ -30,7 +54,7 @@ let listNum = document.querySelectorAll(".listNum");
 let start = 1;
 
 for (let i = 0; i<listNum.length; i++) {
-  let numTxt = start - i;
+  let numTxt = start + i;
   listNum[i].innerText = numTxt;
 }
 
