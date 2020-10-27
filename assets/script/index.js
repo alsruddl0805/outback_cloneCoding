@@ -1,7 +1,3 @@
-// index 보완
-// 1. 슬라이드 prev,next 버튼 구현
-// 2. 슬라이드 controls 활성화
-
 // slide
 var slider = tns({
     "container": ".slides",
